@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Queen from './Componentes/BlogQueen/Queen.jsx';
 import Home from './Views/Home.jsx';
-import Roulette from './Componentes/roulette/RouletteTable.jsx';
+import RouletteTable from './Componentes/roulette/RouletteTable.jsx';
 import { UserService } from "../userService.js"
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
       <Queen />
       <Home />
       {/* Pasa la lista de usuarios como prop userList a Roulette */}
-      <Roulette userList={userList} />
+      <RouletteTable userList={userList} />
     </>
   );
 }

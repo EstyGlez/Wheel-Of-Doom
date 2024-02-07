@@ -1,24 +1,51 @@
-.sorteo-container {
-    text-align: center;
-  }
-  
-  .ruleta {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    height: 150px;
-    width: 150px;
-    border: 2px solid black;
-    border-radius: 50%;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .resultado {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
+body {
+  margin: 0;
+  background: tomato;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.roulette {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wheel img {
+  transition: transform 10s cubic-bezier(0.3, 1, 0.7, 1),
+    10s filter cubic-bezier(0.1, 1, 0.8, 1),
+    10s -webkit-filter cubic-bezier(0.1, 1, 0.8, 1);
+  will-change: transform;
+  border-radius: 50%;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 600px;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border: 80px solid transparent;
+  border-top: 110px solid tomato;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -100px);
+  z-index: 20;
+  border-radius: 0.35em;
+}
+
+.arrow:after {
+}
+
+.spin {
+  cursor: crosshair;
+}
+
+.resultado {
+  position: absolute;
+  text-align: center;
+  color: white;
+}
