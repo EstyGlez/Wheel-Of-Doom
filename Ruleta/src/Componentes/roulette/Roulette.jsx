@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./roulette.css";
+import { UserService } from "../../../userService"; 
+import Home from "../../Views/Home.jsx"
 
 const Roulette = ({ userList }) => {
   const [selectedUser, setSelectedUser] = useState(null);
