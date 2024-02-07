@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Queen from './Componentes/BlogQueen/Queen.jsx';
 import Home from './Views/Home.jsx';
-import Roulette from './Componentes/roulette/Roulette.jsx';
+import Roulette from './Componentes/roulette/RouletteTable.jsx';
 import { UserService } from "../userService.js"
 
 function App() {

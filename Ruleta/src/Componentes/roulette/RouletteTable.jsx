@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./roulette.css";
-import { UserService } from "../../../userService"; 
+import { UserService } from "../../../userService.js"; 
 import Home from "../../Views/Home.jsx"
 
 const Roulette = ({ userList }) => {
