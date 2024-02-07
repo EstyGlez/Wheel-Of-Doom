@@ -4,7 +4,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 
 .roulette {
@@ -25,8 +24,6 @@ body {
   max-width: 600px;
 }
 
-
-
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -41,11 +38,11 @@ body {
   position: relative;
 }
 
-.spinning {
+.spinning .wheel {
   animation: spin 2s ease-out 1;
 }
 
-.stopped {
+.stopped .wheel {
   animation: none !important;
   /* Desactivar la animación en el estado detenido */
 }
@@ -54,4 +51,13 @@ body {
   position: absolute;
   text-align: center;
   color: white;
+}
+
+.button-container {
+  transition: transform 2.2s ease;
+  transform: rotate(0deg); /* Asegura que el botón no gire inicialmente */
+}
+
+.sorteo-container.spinning .button-container {
+  transform: rotate(0deg);
 }
