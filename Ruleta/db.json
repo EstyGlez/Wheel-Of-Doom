@@ -1,22 +1,6 @@
 {
   "users": [
     {
-<<<<<<< HEAD
-      "id": "1ab3",
-      "userName": "Estíbaliz",
-      "surName": "González",
-      "lastName": "sssssssssssss",
-      "email": "estibaliz87gonzalez@gmail.com",
-      "phoneNumber": "jyjy"
-    },
-    {
-      "id": "de0b",
-      "userName": "Estíbaliz",
-      "surName": "Pérez",
-      "lastName": "Gonzalez",
-      "email": "estibaliz87gonzalez@gmail.com",
-      "phoneNumber": "633157005"
-=======
       "id": "3e5b",
       "userName": "Estíbaliz",
       "surName": "chichiwichi",
@@ -39,7 +23,6 @@
       "lastName": "fdfd",
       "email": "fdfd",
       "phoneNumber": "fdfd"
->>>>>>> Esty
     }
   ]
 }
