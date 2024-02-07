@@ -23,14 +23,23 @@ const apiClient = axios.create({
         await apiClient.post("/users", newUser)
     },
 
+    async updateUser(userId, updatedUserData) {
+        try {
+            await apiClient.patch(`/users/${userId}`, updatedUserData);
+        } catch (error) {
+            console.error('Hubo un problema al actualizar el usuario:', error);
+            throw error;
+        }
+    },
+
     async deleteUser(userId) {
         try {
-           await apiClient.delete(`/users/${userId}`);
+            await apiClient.delete(`/users/${userId}`);
         } catch (error) {
-           console.error('Hubo un problema al eliminar el usuario:', error);
+            console.error('Hubo un problema al eliminar el usuario:', error);
+            throw error;
         }
-       }
-       
-       
+    }   
+    
 
 }
