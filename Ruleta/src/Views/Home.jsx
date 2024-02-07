@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-import "./home.css"
+import "./home.css";
 import { useForm, FormProvider } from "react-hook-form";
-import { UserService } from "../../userService.js"
+import { UserService } from "../../userService.js";
 
 const AdminList = () => {
   const [adminList, setAdminList] = useState([]);
   const [editingUserId, setEditingUserId] = useState(null);
+  const [drawParticipants, setDrawParticipants] = useState([]);
   const methods = useForm();
-  const {
-    formState: { errors },
-  } = methods;
+  const { formState: { errors } } = methods;
 
   async function getData() {
     let users = await UserService.getAllUsers();
@@ -18,7 +17,7 @@ const AdminList = () => {
 
   useEffect(() => {
     getData();
-  }, [adminList]);
+  }, []);
 
   async function handleDeleteUser(userId) {
     await UserService.deleteUser(userId);
@@ -32,12 +31,10 @@ const AdminList = () => {
 
   const onSubmit = methods.handleSubmit(async (data) => {
     if (editingUserId) {
-      // Si hay un ID de usuario en edición, actualiza el usuario
       await UserService.updateUser(editingUserId, data);
       showAlert("Usuario actualizado correctamente");
       setEditingUserId(null);
     } else {
-      // Si no hay un ID de usuario en edición, crea un nuevo usuario
       await UserService.submitUser(data);
       showAlert("Usuario creado correctamente");
     }
@@ -46,10 +43,16 @@ const AdminList = () => {
 
   const handleEditUser = (userId, userData) => {
     setEditingUserId(userId);
-    // Establece los valores del formulario con los datos del usuario que se está editando
     methods.reset(userData);
   };
 
+  const handleAddToDraw = (userId) => {
+    setDrawParticipants([...drawParticipants, userId]);
+  };
+
+  const handleRemoveFromDraw = (userId) => {
+    setDrawParticipants(drawParticipants.filter((id) => id !== userId));
+  };
 
   return (
     <section className="container">
@@ -133,7 +136,7 @@ const AdminList = () => {
         </FormProvider>
       </section>
 
-      <section className="listForm">
+        <section className="listForm">
         <table>
           <thead>
             <tr>
@@ -154,15 +157,52 @@ const AdminList = () => {
                 <td className="dataUser">{user.email}</td>
                 <td className="dataUser">{user.phoneNumber}</td>
                 <td>
-                  <button onClick={() => handleEditUser(user.id, user)}>
+                <button onClick={() => handleEditUser(user.id, user)}>
                     Editar
-                  </button>
-                  <button onClick={() => handleDeleteUser(user.id)}>
+                </button>
+                <button onClick={() => handleDeleteUser(user.id)}>
                     Eliminar
-                  </button>
+                </button>
+                <button onClick={() => handleAddToDraw(user.id)}>
+                    Añadir a sorteo
+                </button>
                 </td>
-              </tr>
-            ))}
+                </tr>
+                ))}
+                </tbody>
+                </table>
+            </section>
+            <section><h1>Participantes para el sorteo:</h1></section>
+            <section className="drawTable">
+        <table>
+          <thead>
+            <tr>
+              <th className="title">Nombre</th>
+              <th className="title">Primer Apellido</th>
+              <th className="title">Segundo Apellido</th>
+              <th className="title">Correo Electrónico</th>
+              <th className="title">Número de Teléfono</th>
+              <th className="title">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {drawParticipants.map((userId) => {
+              const user = adminList.find((u) => u.id === userId);
+              return user ? (
+                <tr key={user.id}>
+                  <td>{user.userName}</td>
+                  <td>{user.surName}</td>
+                  <td>{user.lastName}</td>
+                  <td>{user.email}</td>
+                  <td>{user.phoneNumber}</td>
+                  <td>
+                    <button onClick={() => handleRemoveFromDraw(user.id)}>
+                      Eliminar del sorteo
+                    </button>
+                  </td>
+                </tr>
+              ) : null;
+            })}
           </tbody>
         </table>
       </section>
@@ -171,3 +211,5 @@ const AdminList = () => {
 };
 
 export default AdminList;
+
+             
