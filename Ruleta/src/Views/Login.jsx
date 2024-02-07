@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'*/
 import "./login.css"
 import logo from "./images/logo.svg"
 
