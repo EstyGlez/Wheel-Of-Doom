@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./home.css";
 import { useForm, FormProvider } from "react-hook-form";
 import { UserService } from "../../userService.js";
+import { v4 as uuidv4 } from 'uuid';
 
 const AdminList = () => {
   const [adminList, setAdminList] = useState([]);
@@ -10,14 +11,23 @@ const AdminList = () => {
   const methods = useForm();
   const { formState: { errors } } = methods;
 
+ 
+  useEffect(() => {
+    getData();
+    const savedDrawParticipants = JSON.parse(localStorage.getItem('drawParticipants') || '[]');
+    setDrawParticipants(savedDrawParticipants);
+  }, []);
+
+  
+  useEffect(() => {
+    const savedDrawParticipants = JSON.parse(localStorage.getItem('drawParticipants') || '[]');
+    setDrawParticipants(savedDrawParticipants);
+  }, [adminList]);
+
   async function getData() {
     let users = await UserService.getAllUsers();
     setAdminList(users);
   }
-
-  useEffect(() => {
-    getData();
-  }, []);
 
   async function handleDeleteUser(userId) {
     await UserService.deleteUser(userId);
@@ -38,21 +48,41 @@ const AdminList = () => {
       await UserService.submitUser(data);
       showAlert("Usuario creado correctamente");
     }
+    
+    getData();
     methods.reset();
   });
 
   const handleEditUser = (userId, userData) => {
-    setEditingUserId(userId);
-    methods.reset(userData);
-  };
+  setEditingUserId(userId);
+  methods.reset();
+  Object.keys(userData).forEach(key => {
+    methods.setValue(key, userData[key]);
+  });
+};
 
   const handleAddToDraw = (userId) => {
-    setDrawParticipants([...drawParticipants, userId]);
+    const updatedParticipants = [...drawParticipants, userId];
+    setDrawParticipants(updatedParticipants);
+    localStorage.setItem('drawParticipants', JSON.stringify(updatedParticipants));
+  };
+
+  const handleSaveDraw = async () => {
+    try {
+      await UserService.addToDraw(drawParticipants);
+      alert("La lista de sorteo ha sido guardada.");
+    } catch (error) {
+      console.error("Error al guardar la lista de sorteo:", error);
+    }
   };
 
   const handleRemoveFromDraw = (userId) => {
-    setDrawParticipants(drawParticipants.filter((id) => id !== userId));
+    const updatedParticipants = drawParticipants.filter((id) => id !== userId);
+    setDrawParticipants(updatedParticipants);
+    localStorage.setItem('drawParticipants', JSON.stringify(updatedParticipants));
   };
+
+
 
   return (
     <section className="container">
@@ -148,9 +178,9 @@ const AdminList = () => {
               <th className="title"></th>
             </tr>
           </thead>
-          <tbody>
-            {adminList.map((user) => (
-              <tr key={user.id}>
+             <tbody>
+                {adminList.map((user, index) => (
+                <tr key={uuidv4()}>
                 <td className="dataUser">{user.userName}</td>
                 <td className="dataUser">{user.surName}</td>
                 <td className="dataUser">{user.lastName}</td>
@@ -172,6 +202,7 @@ const AdminList = () => {
                 </tbody>
                 </table>
             </section>
+            <button onClick={handleSaveDraw}>Guardar Lista Sorteo</button>
             <section><h1>Participantes para el sorteo:</h1></section>
             <section className="drawTable">
         <table>
