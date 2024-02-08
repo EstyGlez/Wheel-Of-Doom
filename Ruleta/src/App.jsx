@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 /*import Login from "./Views/Login.jsx"*/
-import Home from "./Views/Home.jsx"
+import Welcome from "./Views/Welcome.jsx"
 
 function App() {
   
@@ -11,7 +11,7 @@ function App() {
   return (
     <>
      {/* <Login/> */}
-     <Home/>
+     <Welcome/>
     </>
   )
 }
