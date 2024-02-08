@@ -7,6 +7,7 @@ import { UserService } from "../userService.js"
 
 function App() {
   const [userList, setUserList] = useState([]); // Estado para almacenar la lista de usuarios
+  
 
   useEffect(() => {
     // Llama a UserService para obtener la lista de usuarios al montar el componente
@@ -21,12 +22,16 @@ function App() {
     fetchData();
   }, []); // Llama a useEffect solo una vez al montar el componente
 
+  const handleSorteoComplete = () => {
+    // Lógica que quieres ejecutar cuando el sorteo ha finalizado
+    console.log("Sorteo completado");
+  };
+
   return (
     <>
       <Queen />
-      <Home />
-      {/* Pasa la lista de usuarios como prop userList a Roulette */}
-      <RouletteTable userList={userList} />
+      <Home userList={userList}/>
+      <RouletteTable userList={userList} onSorteoComplete={handleSorteoComplete} />
     </>
   );
 }

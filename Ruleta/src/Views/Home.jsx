@@ -6,6 +6,7 @@ import { UserService } from "../../userService.js"
 const AdminList = () => {
   const [adminList, setAdminList] = useState([]);
   const [editingUserId, setEditingUserId] = useState(null);
+  const [selectedUsers, setSelectedUsers] = useState([]);
   const methods = useForm();
   const {
     formState: { errors },
@@ -48,6 +49,18 @@ const AdminList = () => {
     setEditingUserId(userId);
     // Establece los valores del formulario con los datos del usuario que se está editando
     methods.reset(userData);
+  };
+
+  const handleSelectUser = (user) => {
+    // Verifica si el usuario ya está seleccionado; si no lo está, agrégalo al estado selectedUsers
+    if (!selectedUsers.some((selectedUser) => selectedUser.id === user.id)) {
+      setSelectedUsers([...selectedUsers, user]);
+    }
+  };
+
+  const handleRemoveFromSelection = (userId) => {
+    const updatedSelectedUsers = selectedUsers.filter((user) => user.id !== userId);
+    setSelectedUsers(updatedSelectedUsers);
   };
 
 
@@ -161,10 +174,37 @@ const AdminList = () => {
                   <button onClick={() => handleDeleteUser(user.id)}>
                     Eliminar
                   </button>
+                  <button onClick={() => handleSelectUser(user)}>
+                    Añadir a Sorteo
+                  </button>
                 </td>
               </tr>
             ))}
           </tbody>
+          <section className="selectedUsers">
+            <h2>Participantes en Sorteo</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th className="title">Nombre</th>
+                  <th className="title">Primer Apellido</th>
+                  {/* Agrega otros encabezados según sea necesario */}
+                </tr>
+              </thead>
+              <tbody>
+                {selectedUsers.map((user) => (
+                  <tr key={user.id}>
+                    <td className="dataUser">{user.userName}</td>
+                    <td className="dataUser">{user.surName}</td>
+                    <button onClick={() => handleRemoveFromSelection(user.id)}>
+                    Eliminar
+                  </button>
+                    {/* Agrega otros datos del usuario según sea necesario */}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </section>
         </table>
       </section>
     </section>

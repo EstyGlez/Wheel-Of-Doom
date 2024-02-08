@@ -14,10 +14,6 @@ body {
 }
 
 .wheel img {
-  transition: transform 5s cubic-bezier(0.3, 1, 0.7, 1),
-    10s filter cubic-bezier(0.1, 1, 0.8, 1),
-    10s -webkit-filter cubic-bezier(0.1, 1, 0.8, 1);
-  will-change: transform, filter, -webkit-filter;
   border-radius: 50%;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -39,12 +35,11 @@ body {
 }
 
 .spinning .wheel {
-  animation: spin 2s ease-out 1;
+  animation: spin 5s cubic-bezier(0.3, 1, 0.7, 1);
 }
 
 .stopped .wheel {
   animation: none !important;
-  /* Desactivar la animación en el estado detenido */
 }
 
 .resultado {
@@ -55,9 +50,9 @@ body {
 
 .button-container {
   transition: transform 2.2s ease;
-  transform: rotate(0deg); /* Asegura que el botón no gire inicialmente */
+  transform: rotate(0deg);
 }
 
 .sorteo-container.spinning .button-container {
-  transform: rotate(0deg);
+  transform: rotate(360deg);
 }

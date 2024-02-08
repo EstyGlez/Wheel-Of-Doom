@@ -3,12 +3,10 @@ import rul from "/src/assets/img/rul.png"
 import AdminList from "../../Views/Home";
 import "./rouletteTable.css"
 
-const RouletteTable = ({ userList }) => {
-  
+const RouletteTable = ({ userList, onSorteoComplete }) => {
   const [selectedUser, setSelectedUser] = useState(null);
   const [remainingUsers, setRemainingUsers] = useState([]);
-  const [spinning, setSpinning] = useState(false); // Agrega esta línea para inicializar selectedUser
-
+  const [spinning, setSpinning] = useState(false);
 
   useEffect(() => {
     if (Array.isArray(userList)) {
@@ -21,7 +19,6 @@ const RouletteTable = ({ userList }) => {
 
   const handleSorteo = async () => {
     if (spinning) {
-      // Si la ruleta está girando, no permitir más acciones
       return;
     }
 
@@ -32,21 +29,27 @@ const RouletteTable = ({ userList }) => {
 
     setSpinning(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 2200));
+    // Espera 2 segundos antes de girar la ruleta
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
+    // Simula la animación de la ruleta girando
+    for (let i = 0; i < 10; i++) {
+      await new Promise((resolve) => setTimeout(resolve, 200));
+      const randomIndex = Math.floor(Math.random() * remainingUsers.length);
+      setSelectedUser(remainingUsers[randomIndex]);
+    }
+
+    // Detiene la animación y selecciona al ganador
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    setSpinning(false);
     const randomIndex = Math.floor(Math.random() * remainingUsers.length);
     const selected = remainingUsers[randomIndex];
-
     setSelectedUser(selected);
     setRemainingUsers(remainingUsers.filter((user) => user.id !== selected.id));
-
-    setSpinning(false);
 
     // Notifica al componente padre que el sorteo ha finalizado
     onSorteoComplete();
   };
-
-  
 
   return (
     <div className={`sorteo-container${spinning ? " spinning" : ""}`}>
@@ -59,7 +62,6 @@ const RouletteTable = ({ userList }) => {
         Encontrada!
       </button>
       <div className="roulette">
-     
         <div className={`wheel${spinning ? " spinning" : ""}`}>
           <img src={rul} alt="Rueda de la ruleta" />
         </div>
