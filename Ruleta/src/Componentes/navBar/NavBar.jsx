@@ -1,8 +1,8 @@
-/* import React from 'react'*/
+
 import "./navbar.css"
-import logo from "./Componentes/comp_images/logo.svg"
-import iconlogin from "./Componentes/comp_images/iconlogin.svg"
-import iconlogout from "./Componentes/comp_images/iconlogout.svg"
+import logo from "./images_navbar/logo.svg"
+import iconlogin from "./images_navbar/iconlogin.svg"
+import iconlogout from "./images_navbar/iconlogout.svg"
 
 
 function NavBar() {
@@ -10,24 +10,25 @@ function NavBar() {
 
     return (
         <>
-            <navbar>
+
+            <navbar className="navbar">
                 <section>
                     <img className='logo' src={logo} alt="logo"></img>
                 </section>
 
                 <section>
-                    <button >Formulario</button>
-                    <button >Ruleta</button>
+                    <button id="buttonform" >FORMULARIO</button>
+                    <button >RULETA</button>
                 </section>
 
-                <section>
-                    <div>
-                        <img src={iconlogin} alt="login"></img>
+                <section className="options">
+                    <div className="login">
+                        <img src={iconlogin} alt="login" id="img_login"></img>
                         <p>@usuaria</p>
                     </div>
 
-                    <div>
-                        <img src={iconlogout} alt="logout"></img>
+                    <div className="logout">
+                        <img src={iconlogout} alt="logout" id="img_logout"></img>
                         <p>Salir</p>
                     </div>
                 </section>
