@@ -3,7 +3,7 @@ body {
     background-image: url('images/background.svg');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: contain;
 }
 
 .logo{
@@ -34,6 +34,10 @@ input {
     height: 44px;
 }
 
+#loginlabel {
+    color: white;
+    font-size: 16px; 
+}
 input::placeholder {
     color:white;
     font-size: 16px; 

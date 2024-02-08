@@ -23,7 +23,7 @@ function Login() {
                         </div>
                         <div className='label'>
                             <label>
-                                <input type='text' placeholder='Contraseña'>
+                                <input id='loginlabel' type='text' placeholder='Contraseña'>
                                 </input>
                             </label>
                         </div>
