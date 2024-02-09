@@ -1,46 +1,79 @@
 import React, { useState, useEffect } from "react";
-import "./roulette.css";
-import { UserService } from "../../../userService.js"; 
-import Home from "../../Views/Home.jsx"
+import rul from "/src/assets/rul.png"
+import AdminList from "../../Views/Home";
+import "./rouletteTable.css"
 
-const Roulette = ({ userList }) => {
-  const [selectedUser, setSelectedUser] = useState(null);
+const RouletteTable = ({ userList, onSorteoComplete }) => {
+  const [drawParticipants, setDrawParticipants] = useState(null);
   const [remainingUsers, setRemainingUsers] = useState([]);
+  const [spinning, setSpinning] = useState(false);
+  const [selectedUser, setSelectedUser] = useState(null);
 
   useEffect(() => {
     if (Array.isArray(userList)) {
       setRemainingUsers([...userList]);
     } else {
       console.error("userList no es un array válido");
-      // En este caso, puedes establecer remainingUsers como un array vacío o manejar el error de otra manera.
       setRemainingUsers([]);
     }
   }, [userList]);
 
-  const handleSorteo = () => {
-    if (remainingUsers.length === 0) {
-      alert("¡Todos los usuarios han sido seleccionados!");
+  const handleSorteo = async () => {
+    if (spinning) {
       return;
     }
 
+    if (remainingUsers.length === 0) {
+      alert("No hay más sospechosas");
+      return;
+    }
+
+    setSpinning(true);
+
+    setDrawParticipants(selected);
+
+    // Espera 2 segundos antes de girar la ruleta
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    // Simula la animación de la ruleta girando
+    for (let i = 0; i < 10; i++) {
+      await new Promise((resolve) => setTimeout(resolve, 200));
+      const randomIndex = Math.floor(Math.random() * remainingUsers.length);
+      setSelectedUser(remainingUsers[randomIndex]);
+    }
+
+    // Detiene la animación y selecciona al ganador
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    setSpinning(false);
     const randomIndex = Math.floor(Math.random() * remainingUsers.length);
     const selected = remainingUsers[randomIndex];
-
-    setSelectedUser(selected);
+    setDrawParticipants(selected);
     setRemainingUsers(remainingUsers.filter((user) => user.id !== selected.id));
+
+    // Notifica al componente padre que el sorteo ha finalizado
+    onSorteoComplete();
   };
 
   return (
-    <div className="sorteo-container">
+    <div className={`sorteo-container${spinning ? " spinning" : ""}`}>
       <h2>Sorteo</h2>
-      <button onClick={handleSorteo} disabled={remainingUsers.length === 0}>
-        Sortear
+      <button
+        onClick={handleSorteo}
+        disabled={spinning}
+        className={spinning ? "stopped" : ""}
+      >
+        Encontrada!
       </button>
-      <div className="ruleta">
-        {selectedUser && (
+      
+      <div className="roulette">
+        <div className={`wheel${spinning ? " spinning" : ""}`}>
+          <img src={rul} alt="Rueda de la ruleta" />
+        </div>
+        {drawParticipants && (
           <div className="resultado">
-            <p>Felicidades, el usuario seleccionado es:</p>
-            <p>{`${selectedUser.userName} ${selectedUser.surName}`}</p>
+            <p>La Reina Cotilla es:</p>
+            <p>{`${drawParticipants.userName} ${drawParticipants.surName}`}</p>
+            
           </div>
         )}
       </div>
@@ -48,4 +81,4 @@ const Roulette = ({ userList }) => {
   );
 };
 
-export default Roulette;
+export default RouletteTable;

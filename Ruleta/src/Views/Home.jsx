@@ -1,24 +1,33 @@
 import React, { useState, useEffect } from "react";
-import "./home.css"
+import "./home.css";
 import { useForm, FormProvider } from "react-hook-form";
-import { UserService } from "../../userService.js"
+import { UserService } from "../../userService.js";
+import { v4 as uuidv4 } from 'uuid';
 
 const AdminList = () => {
   const [adminList, setAdminList] = useState([]);
   const [editingUserId, setEditingUserId] = useState(null);
+  const [drawParticipants, setDrawParticipants] = useState([]); // Inicializar como un array vacío en lugar de null
   const methods = useForm();
-  const {
-    formState: { errors },
-  } = methods;
+  const { formState: { errors } } = methods;
+
+
+  useEffect(() => {
+    getData();
+    const savedDrawParticipants = JSON.parse(localStorage.getItem('drawParticipants') || '[]');
+    setDrawParticipants(savedDrawParticipants);
+  }, []);
+
+
+  useEffect(() => {
+    const savedDrawParticipants = JSON.parse(localStorage.getItem('drawParticipants') || '[]');
+    setDrawParticipants(savedDrawParticipants);
+  }, [adminList]);
 
   async function getData() {
     let users = await UserService.getAllUsers();
     setAdminList(users);
   }
-
-  useEffect(() => {
-    getData();
-  }, [adminList]);
 
   async function handleDeleteUser(userId) {
     await UserService.deleteUser(userId);
@@ -32,23 +41,55 @@ const AdminList = () => {
 
   const onSubmit = methods.handleSubmit(async (data) => {
     if (editingUserId) {
-      // Si hay un ID de usuario en edición, actualiza el usuario
       await UserService.updateUser(editingUserId, data);
       showAlert("Usuario actualizado correctamente");
       setEditingUserId(null);
     } else {
-      // Si no hay un ID de usuario en edición, crea un nuevo usuario
       await UserService.submitUser(data);
       showAlert("Usuario creado correctamente");
     }
+
+    getData();
     methods.reset();
   });
 
   const handleEditUser = (userId, userData) => {
     setEditingUserId(userId);
-    // Establece los valores del formulario con los datos del usuario que se está editando
-    methods.reset(userData);
+    methods.reset();
+    Object.keys(userData).forEach(key => {
+      methods.setValue(key, userData[key]);
+    });
   };
+
+  const handleAddToDraw = async (userId) => {
+    try {
+      // Agregar participante al estado local
+      const updatedParticipants = [...drawParticipants, userId];
+      setDrawParticipants(updatedParticipants);
+      localStorage.setItem('drawParticipants', JSON.stringify(updatedParticipants));
+
+      // Agregar participante a la base de datos JSON en el servidor
+      await UserService.addToDraw(updatedParticipants);
+    } catch (error) {
+      console.error('Error al agregar participante al sorteo:', error);
+    }
+  };
+
+  const handleSaveDraw = async () => {
+    try {
+      await UserService.addToDraw(drawParticipants);
+      alert("La lista de sorteo ha sido guardada.");
+    } catch (error) {
+      console.error("Error al guardar la lista de sorteo:", error);
+    }
+  };
+
+  const handleRemoveFromDraw = (userId) => {
+    const updatedParticipants = drawParticipants.filter((id) => id !== userId);
+    setDrawParticipants(updatedParticipants);
+    localStorage.setItem('drawParticipants', JSON.stringify(updatedParticipants));
+  };
+
 
 
   return (
@@ -146,8 +187,8 @@ const AdminList = () => {
             </tr>
           </thead>
           <tbody>
-            {adminList.map((user) => (
-              <tr key={user.id}>
+            {adminList.map((user, index) => (
+              <tr key={uuidv4()}>
                 <td className="dataUser">{user.userName}</td>
                 <td className="dataUser">{user.surName}</td>
                 <td className="dataUser">{user.lastName}</td>
@@ -160,9 +201,47 @@ const AdminList = () => {
                   <button onClick={() => handleDeleteUser(user.id)}>
                     Eliminar
                   </button>
+                  <button onClick={() => handleAddToDraw(user.id)}>
+                    Añadir a sorteo
+                  </button>
                 </td>
               </tr>
             ))}
+          </tbody>
+        </table>
+      </section>
+      <button onClick={handleSaveDraw}>Guardar Lista Sorteo</button>
+      <section><h1>Participantes para el sorteo:</h1></section>
+      <section className="drawTable">
+        <table>
+          <thead>
+            <tr>
+              <th className="title">Nombre</th>
+              <th className="title">Primer Apellido</th>
+              <th className="title">Segundo Apellido</th>
+              <th className="title">Correo Electrónico</th>
+              <th className="title">Número de Teléfono</th>
+              <th className="title">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {drawParticipants.map((userId) => {
+              const user = adminList.find((u) => u.id === userId);
+              return user ? (
+                <tr key={user.id}>
+                  <td>{user.userName}</td>
+                  <td>{user.surName}</td>
+                  <td>{user.lastName}</td>
+                  <td>{user.email}</td>
+                  <td>{user.phoneNumber}</td>
+                  <td>
+                    <button onClick={() => handleRemoveFromDraw(user.id)}>
+                      Eliminar del sorteo
+                    </button>
+                  </td>
+                </tr>
+              ) : null;
+            })}
           </tbody>
         </table>
       </section>
@@ -171,3 +250,4 @@ const AdminList = () => {
 };
 
 export default AdminList;
+
