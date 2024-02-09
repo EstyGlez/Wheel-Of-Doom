@@ -61,11 +61,19 @@ const AdminList = () => {
   });
 };
 
-  const handleAddToDraw = (userId) => {
+const handleAddToDraw = async (userId) => {
+  try {
+    // Agregar participante al estado local
     const updatedParticipants = [...drawParticipants, userId];
     setDrawParticipants(updatedParticipants);
     localStorage.setItem('drawParticipants', JSON.stringify(updatedParticipants));
-  };
+
+    // Agregar participante a la base de datos JSON en el servidor
+    await UserService.addToDraw(updatedParticipants);
+  } catch (error) {
+    console.error('Error al agregar participante al sorteo:', error);
+  }
+};
 
   const handleSaveDraw = async () => {
     try {
