@@ -44,3 +44,38 @@ button {
     display: block;
     margin: auto;
 }
+
+
+@media (max-width: 430px) {
+
+
+.logoandbuttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 150px;
+}
+.infoaccess{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+    
+    
+}
+
+.buttonbox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    /* gap: 25px; */
+    margin-bottom: 98px;
+}
+
+.intro {
+     width: 380px;
+
+}
+
+}
