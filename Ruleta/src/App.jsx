@@ -4,6 +4,7 @@ import Login from './Componentes/login/Login.jsx';
 import Welcome from './Componentes/welcome/WelcomeViews.jsx';
 import Home from './Views/Home.jsx';
 import Roulette from './Componentes/roulette/RouletteTable.jsx';
+import { UserService } from '../userService.js';
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -56,11 +57,11 @@ function App() {
   };
 
   const handleAddToSecondTable = (user) => {
-    // Aquí puedes implementar la lógica para añadir el usuario a la segunda tabla si es necesario
+    setSecondTableUsers((prevUsers) => [...prevUsers, user]);
   };
 
   const handleSorteoComplete = () => {
-    // Aquí puedes implementar cualquier lógica que necesites después de que se complete el sorteo
+    setParticipantsForRoulette([]);
   };
 
   return (

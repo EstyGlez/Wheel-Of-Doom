@@ -252,17 +252,14 @@
 // export default AdminList;
 
 import React from 'react';
+import Form  from '../Componentes/adminList/Form.jsx';
 
 function Home() {
     return (
-        <div>
-            <h1>¡Bienvenido a la página de inicio!</h1>
-            <p>Aquí puedes agregar contenido relevante para la página de inicio.</p>
-        </div>
+        <Form />
     );
 }
 
 export default Home;
-
 
              
