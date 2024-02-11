@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Login from './Componentes/login/Login.jsx'
-import Welcome from './Views/Welcome.jsx'
-import Home from './Views/Home.jsx'
-import Roulette from './Componentes/roulette/RouletteTable.jsx'
-import { UserService } from '../userService.js'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './Componentes/login/Login.jsx';
+import Welcome from './Componentes/welcome/WelcomeViews.jsx';
+import Home from './Views/Home.jsx';
+import Roulette from './Componentes/roulette/RouletteTable.jsx';
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -65,33 +64,17 @@ function App() {
   };
 
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact>
-          <Login />
-        </Route>
-        <Route path="/welcome">
-          <Welcome />
-        </Route>
-        <Route path="/home">
-          <Home
-            users={users}
-            onAddUser={handleAddUser}
-            onUpdateUser={handleUpdateUser}
-            onDeleteUser={handleDeleteUser}
-            onAddToSecondTable={handleAddToSecondTable}
-          />
-        </Route>
-        <Route path="/roulette">
-          <Roulette
-            userList={participantsForRoulette}
-            onSorteoComplete={handleSorteoComplete}
-          />
-        </Route>
-      </Switch>
-    </Router>
-  );
-}
-
-export default App;
+    return (
+      <Router>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/welcome" element={<Welcome />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/roulette" element={<Roulette />} />
+        </Routes>
+      </Router>
+    );
+  }
+  
+  export default App;
 

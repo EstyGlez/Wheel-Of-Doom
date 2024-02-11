@@ -75,3 +75,15 @@
 // };
 
 // export default RouletteTable;
+import React from 'react';
+
+function Roulette() {
+    return (
+        <div>
+            <h1>¡Bienvenido a la Ruleta de la Suerte!</h1>
+            <p>Aquí puedes agregar contenido relevante para la página de la ruleta.</p>
+        </div>
+    );
+}
+
+export default Roulette;
