@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import './Roulette.css';
+import './rouletteTable.css';
 
 const Roulette = ({ userList, onSorteoComplete }) => {
   const [drawnParticipant, setDrawnParticipant] = useState(null);
