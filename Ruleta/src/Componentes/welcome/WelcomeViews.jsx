@@ -1,8 +1,8 @@
 
 import React from 'react';
-import logo from './images/logo.png';
-import xoxo from './images/xoxo.png';
-import './Welcome.css';
+import logo from './images/logo.svg'
+import xoxo from './images/xoxo.svg';
+import './welcomeViews.css';
 
 function Welcome() {
     return (
