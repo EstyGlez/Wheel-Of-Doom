@@ -1,8 +1,8 @@
 
 import "./navbar.css"
-import logo from "./images_navbar/logo.svg"
-import iconlogin from "./images_navbar/iconlogin.svg"
-import iconlogout from "./images_navbar/iconlogout.svg"
+import logo from "./images/logo.svg"
+import iconlogin from "./images/iconlogin.svg"
+import iconlogout from "./images/iconlogout.svg"
 
 
 function NavBar() {

@@ -252,11 +252,11 @@
 // export default AdminList;
 
 import React from 'react';
-import Form  from '../Componentes/adminList/Form.jsx';
+import FormTables  from '../Componentes/formAndTables/FormTables';
 
 function Home() {
     return (
-        <Form />
+        <FormTables />
     );
 }
 
