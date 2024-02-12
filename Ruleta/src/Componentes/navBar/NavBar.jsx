@@ -18,7 +18,7 @@ function NavBar() {
 
                 <section>
                     <button id="buttonform" >FORMULARIO</button>
-                    <button >RULETA</button>
+                    <button className="navbar_button">RULETA</button>
                 </section>
 
                 <section className="options">
