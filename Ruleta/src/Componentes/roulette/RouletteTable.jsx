@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import rul from "/src/assets/img/rul.png"
-import AdminList from "../../Views/Home";
 import "./rouletteTable.css"
 
 const RouletteTable = ({ userList, onSorteoComplete }) => {

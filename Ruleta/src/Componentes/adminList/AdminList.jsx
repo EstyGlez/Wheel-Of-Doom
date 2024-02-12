@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import { UserService } from "../../../userService.js"
+import "./adminList.css"
 
 const AdminList = () => {
   const [adminList, setAdminList] = useState([]);
@@ -65,6 +66,9 @@ const AdminList = () => {
 
 
   return (
+    <>
+    <h3>Bienvenidos a la web del colegio de la reina cotilla de las desarrolladoras. Te invitamos a a jugar y a investigar, 
+    ¡encontrarás muchas noticias frescas!</h3>
     <section className="container">
       <section className="Form">
         <FormProvider {...methods}>
@@ -207,7 +211,8 @@ const AdminList = () => {
         </table>
       </section>
     </section>
+    </>
   );
 };
 
-export default AdminList;
+export default AdminList
