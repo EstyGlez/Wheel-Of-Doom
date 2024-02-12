@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import AdminList from '../Componentes/adminList/AdminList.jsx';
+import AdminList from '../Componentes/adminlist/Adminlist.jsx';
 import { UserService } from "../../userService.js"
+import NavBar from "../Componentes/navBar/NavBar.jsx"
 
 function Home() {
   const [userList, setUserList] = useState([]); // Estado para almacenar la lista de usuarios
@@ -23,7 +24,7 @@ function Home() {
 
   return (
     <>
-      
+      <NavBar/>
       <AdminList userList={userList}/>
       
     </>

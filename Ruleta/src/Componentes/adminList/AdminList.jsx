@@ -67,17 +67,19 @@ const AdminList = () => {
 
   return (
     <>
-    <h3>Bienvenidos a la web del colegio de la reina cotilla de las desarrolladoras. Te invitamos a a jugar y a investigar, 
-    ¡encontrarás muchas noticias frescas!</h3>
+    <p className="texthome">Bienvenidos a la web del colegio de la reina cotilla de las desarrolladoras.</p>
+    <p className="texthome"> Te invitamos a a jugar y a investigar,</p> 
+    <p className="texthome">¡encontrarás muchas noticias frescas!</p>
     <section className="container">
       <section className="Form">
         <FormProvider {...methods}>
-          <form onSubmit={onSubmit}>
+          <form className="formhome"  onSubmit={onSubmit}>
             <label>
-              <h3>Nombre:</h3>
+              
               <input
                 className="imputStyle"
                 type="text"
+                placeholder='Nombre'
                 id="textUserName"
                 name="userName"
                 {...methods.register("userName", { required: true })}
@@ -88,10 +90,11 @@ const AdminList = () => {
             </label>
 
             <label>
-              <h3>Primer Apellido:</h3>
+              
               <input
                 className="imputStyle"
                 type="text"
+                placeholder='Primer apellido'
                 id="texSurName"
                 name="surName"
                 {...methods.register("surName", { required: true })}
@@ -102,10 +105,11 @@ const AdminList = () => {
             </label>
 
             <label>
-              <h3>Segundo Apellido:</h3>
+              
               <input
                 className="imputStyle"
                 type="text"
+                placeholder='Segundo apellido'
                 id="textLastName"
                 name="lastName"
                 {...methods.register("lastName", { required: true })}
@@ -116,10 +120,11 @@ const AdminList = () => {
             </label>
 
             <label>
-              <h3>Correo Electrónico:</h3>
+              
               <input
                 className="imputStyle"
                 type="text"
+                placeholder='Correo Electrónico'
                 id="textEmail"
                 name="email"
                 {...methods.register("email", { required: true })}
@@ -130,10 +135,11 @@ const AdminList = () => {
             </label>
 
             <label>
-              <h3>Número de Teléfono:</h3>
+              
               <input
                 className="imputStyle"
                 type="text"
+                placeholder='Teléfono'
                 id="textPhoneNumer"
                 name="phoneNumber"
                 {...methods.register("phoneNumber", { required: true })}
