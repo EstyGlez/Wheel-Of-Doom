@@ -19,7 +19,7 @@ body {
     /* margin: 0 auto; */
 }
 
-button {
+.navbar_button {
     background-color: transparent;
     color: white;
     border: none;
@@ -33,6 +33,9 @@ button {
 
 #buttonform{
     padding-right: 56px;
+    background-color: transparent;
+    color: white;
+    border: none;
 }
 #img_login {
     padding-right: 10px;
