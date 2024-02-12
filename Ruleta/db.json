@@ -1,20 +1,36 @@
 {
   "users": [
     {
-      "id": "a824",
-      "userName": "123456",
-      "surName": "Medina",
-      "lastName": "Luque",
-      "email": "sandra@gmail.com",
-      "phoneNumber": "632514789"
-    },
-    {
       "id": "845c",
       "userName": "Inés",
       "surName": "Gonzalez",
       "lastName": "Gil",
       "email": "ines@gmail.com",
       "phoneNumber": "652389642"
+    },
+    {
+      "id": "6428",
+      "userName": "Estíbaliz",
+      "surName": "González",
+      "lastName": "Gonzalez",
+      "email": "estibaliz87gonzalez@gmail.com",
+      "phoneNumber": "hghg"
+    },
+    {
+      "id": "ce83",
+      "userName": "Estíbaliz",
+      "surName": "González",
+      "lastName": "Gonzalez",
+      "email": "estibaliz87gonzalez@gmail.com",
+      "phoneNumber": "hghg"
+    },
+    {
+      "id": "1c96",
+      "userName": "Estíbaliz",
+      "surName": "ggg",
+      "lastName": "Luque",
+      "email": "estibaliz87gonzalez@gmail.com",
+      "phoneNumber": "hghg"
     }
   ],
   "draw": [
@@ -27,7 +43,7 @@
       "phoneNumber": "qq"
     },
     {
-      "id": "e81c",
+      "id": "3dd7",
       "participantIds": [
         "49bb",
         "f2ff",
@@ -37,38 +53,12 @@
         "74ee",
         "74ee",
         "0ee5",
-        "0ee5"
-      ]
-    },
-    {
-      "id": "a2f4",
-      "participantIds": [
-        "49bb",
-        "f2ff",
-        "f66b",
-        "5587",
-        "e501",
-        "74ee",
-        "74ee",
-        "0ee5"
-      ]
-    },
-    {
-      "id": "bf57",
-      "participantIds": [
-        "49bb",
-        "f2ff",
-        "f66b",
-        "5587",
-        "e501",
-        "74ee",
-        "74ee",
-        "0ee5",
+        "6428",
         "a824"
       ]
     },
     {
-      "id": "b440",
+      "id": "92c1",
       "participantIds": [
         "49bb",
         "f2ff",
@@ -78,186 +68,13 @@
         "74ee",
         "74ee",
         "0ee5",
-        "a824"
-      ]
-    },
-    {
-      "id": "fa8f",
-      "participantIds": [
-        "49bb",
-        "f2ff",
-        "f66b",
-        "5587",
-        "e501",
-        "74ee",
-        "74ee",
-        "0ee5",
-        "a824"
-      ]
-    },
-    {
-      "id": "8250",
-      "participantIds": [
-        "49bb",
-        "f2ff",
-        "f66b",
-        "5587",
-        "e501",
-        "74ee",
-        "74ee",
-        "0ee5",
-        "a824"
-      ]
-    },
-    {
-      "id": "c7a3",
-      "participantIds": [
-        "49bb",
-        "f2ff",
-        "f66b",
-        "5587",
-        "e501",
-        "74ee",
-        "74ee",
-        "0ee5",
-        "a824",
-        "0ee5"
-      ]
-    },
-    {
-      "id": "9fd7",
-      "participantIds": [
-        "49bb",
-        "f2ff",
-        "f66b",
-        "5587",
-        "e501",
-        "74ee",
-        "74ee",
-        "0ee5",
-        "a824",
-        "0ee5",
-        "0ee5"
-      ]
-    },
-    {
-      "id": "f264",
-      "participantIds": [
-        "49bb",
-        "f2ff",
-        "f66b",
-        "5587",
-        "e501",
-        "74ee",
-        "74ee",
-        "0ee5",
-        "a824",
-        "0ee5",
-        "0ee5",
-        "2fe6"
-      ]
-    },
-    {
-      "id": "ddc3",
-      "participantIds": [
-        "49bb",
-        "f2ff",
-        "f66b",
-        "5587",
-        "e501",
-        "74ee",
-        "74ee",
-        "a824",
-        "a824"
-      ]
-    },
-    {
-      "id": "2fb4",
-      "participantIds": [
-        "49bb",
-        "f2ff",
-        "f66b",
-        "5587",
-        "e501",
-        "74ee",
-        "74ee",
-        "a824",
-        "a824",
-        "0ee5"
-      ]
-    },
-    {
-      "id": "ceab",
-      "participantIds": [
-        "49bb",
-        "f2ff",
-        "f66b",
-        "5587",
-        "e501",
-        "74ee",
-        "74ee",
-        "a824",
-        "a824",
-        "0ee5"
-      ]
-    },
-    {
-      "id": "5143",
-      "participantIds": [
-        "49bb",
-        "f2ff",
-        "f66b",
-        "5587",
-        "e501",
-        "74ee",
-        "74ee",
-        "0ee5"
-      ]
-    },
-    {
-      "id": "9075",
-      "participantIds": [
-        "49bb",
-        "f2ff",
-        "f66b",
-        "5587",
-        "e501",
-        "74ee",
-        "74ee",
-        "0ee5",
-        "a824"
-      ]
-    },
-    {
-      "id": "00e8",
-      "participantIds": [
-        "49bb",
-        "f2ff",
-        "f66b",
-        "5587",
-        "e501",
-        "74ee",
-        "74ee",
-        "0ee5",
+        "6428",
         "a824",
         "845c"
       ]
     },
     {
-      "id": "f47d",
-      "participantIds": [
-        "49bb",
-        "f2ff",
-        "f66b",
-        "5587",
-        "e501",
-        "74ee",
-        "74ee",
-        "0ee5"
-      ]
-    },
-    {
-      "id": "8748",
+      "id": "d513",
       "participantIds": [
         "49bb",
         "f2ff",
@@ -267,22 +84,10 @@
         "74ee",
         "74ee",
         "0ee5",
-        "a824"
-      ]
-    },
-    {
-      "id": "ae53",
-      "participantIds": [
-        "49bb",
-        "f2ff",
-        "f66b",
-        "5587",
-        "e501",
-        "74ee",
-        "74ee",
-        "0ee5",
+        "6428",
         "a824",
-        "845c"
+        "845c",
+        "6428"
       ]
     }
   ]
