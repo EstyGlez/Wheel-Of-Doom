@@ -3,52 +3,62 @@ body {
     color: white;
 }
 
-.logo {
+.logonavbar {
     width: 194px;
-    padding-top: 49px;
+    margin-top: -5px;
 }
 
 .navbar {
     display: flex;
     flex-direction: row;
     width: 1148px;
-    align-items: center;
     margin-left: 146px;
     margin-right: 146px;
+    margin-top: 40px;
     justify-content: space-between;
-    /* margin: 0 auto; */
 }
 
-button {
-    background-color: transparent;
-    color: white;
-    border: none;
+.menu {
+    display: flex;
+    flex-direction: row;
+    gap: 39px;
 }
-
 
 .options {
     display: flex;
     flex-direction: row;
+    gap: 39px;
+    align-self: first baseline;
+
 }
 
-#buttonform{
-    padding-right: 56px;
-}
-#img_login {
-    padding-right: 10px;
-}
-
-#img_logout {
-    padding-right: 10px;
+.options img {
+    align-self: first baseline;
 }
 
 .login {
     display: flex;
     flex-direction: row;
-    padding-right: 39px;
+    gap: 10px;
 }
 
 .logout {
     display: flex;
     flex-direction: row;
+    gap: 10px;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: goldenrod;
+    /* Cambia a color dorado al pasar el ratón */
+}
+
+.link.active {
+    text-decoration: underline;
+    /* Añade subrayado al enlace activo */
 }
