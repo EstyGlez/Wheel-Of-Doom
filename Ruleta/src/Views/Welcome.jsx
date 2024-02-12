@@ -1,19 +1,20 @@
 /* import React from 'react'*/
-import "./login.css"
+import "./welcome.css"
 import logo from "./images/logo.svg"
+import xoxo from "./images/xoxo.svg"
 
 
-function Login() {
+function Welcome() {
 
 
     return (
         <>
-            <section className='logoandlogin'>
+            <section className='logoandbuttons'>
                 <div>
                     <img className='logo' src={logo} alt="logo"></img>
                 </div>
 
-                <div>
+                {/* <div>
                     <form>
                         <div className='label'>
                             <label>
@@ -30,11 +31,22 @@ function Login() {
                         <button className='access' type="submit">ACCEDER</button>
 
                     </form>
-                </div>
+                </div> */}
+
+                <section className="infoaccess">
+                    <p className="intro">
+                        Bienvenida @usuaria! En esta web podrás acceder a la lista de los alumnos más estilosos de Málaga y podrás hacer que participen en cualquiera de tus sorteos. Pincha abajo y accede directamente.
+                    </p>
+                    <div className="buttonbox">
+                        <button type="submit">FORMULARIO</button>
+                        <button type="submit">RULETA DE LA SUERTE</button>
+                    </div>
+                    <img className='xoxo' src={xoxo} alt="xoxo"></img>
+                </section>
             </section>
 
         </>
     )
 }
 
-export default Login
+export default Welcome
