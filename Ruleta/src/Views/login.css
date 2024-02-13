@@ -17,13 +17,12 @@ body {
     padding-top: 270px;
 }
 
-
 .label{
     padding-bottom: 48px;
 }
 
-
 input {
+    color: white;
     display: flex;
     flex-direction: column;
     background-color: transparent;
