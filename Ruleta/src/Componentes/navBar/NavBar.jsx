@@ -21,7 +21,6 @@ function NavBar() {
                     <Link to="/home" className="link">FORMULARIO</Link>
                     <Link to="/roulette" className="link">RULETA</Link>
                 </section>
-
                 <section className="options">
                     <div className="login">
                         <img src={iconlogin} alt="login" id="img_login"></img>
@@ -33,7 +32,6 @@ function NavBar() {
                         <Link to="/login" className="link">Salir</Link>
                     </div>
                 </section>
-
             </navbar>
 
         </>
