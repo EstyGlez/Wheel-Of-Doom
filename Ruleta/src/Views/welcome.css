@@ -34,7 +34,7 @@ body {
     gap: 25px;
     margin-bottom: 98px;
 }
-.button-wel {
+button {
     min-width: 297px;
     height: 44px;
     font-weight: bold;
