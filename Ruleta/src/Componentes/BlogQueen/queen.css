@@ -4,11 +4,16 @@
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-position: center; /* Centra la imagen en el botón */
     position: static;
-   margin: 0;
+    margin: 0;
+    border: none;
     padding:  10px  20px; /* Ajusta el padding para hacer el botón más grande */
-    width:  50px; /* O establece un ancho explícito */
-    height:  50px; /* Y un alto explícito si es necesario */
+    width: auto; /* O establece un ancho explícito */
+    height:  auto; /* Y un alto explícito si es necesario */
   
+  }
+  .boton-diana img {
+    width: 50px;
+    height: 50px;
   }
   main { 
     position: relative;

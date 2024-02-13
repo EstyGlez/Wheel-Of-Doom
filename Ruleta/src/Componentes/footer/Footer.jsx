@@ -9,9 +9,14 @@ function Footer() {
         <>
             <footer className='footer'>
                 <section>
-                    <img src={la_reina} alt='reina_cotilla' />
-                   
-                    <Queen />
+                    <div className="footer-content">
+                        <div className="content-boton">
+
+                             <img src={la_reina} alt='reina_cotilla' />
+                             <Queen />
+                             
+                        </div>
+                    </div>
                     <h1>&copy; Developed by Grupo 4 Creations © </h1>
                 </section>
             </footer>
