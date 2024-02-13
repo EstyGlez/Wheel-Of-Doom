@@ -6,6 +6,7 @@ import editIcon from './editicon.svg';
 import deleteIcon from './deleteicon.svg';
 import addIcon from './addicon.svg';
 import Swal from 'sweetalert2';
+import thumb_up from "./thumb_up.svg"
 
 const AdminList = () => {
   const [adminList, setAdminList] = useState([]);
@@ -171,16 +172,16 @@ const AdminList = () => {
           </section>
           <section className="tittle-list">
             <h2 className="textlist">Lista Principal</h2>
-              <img src={editIcon} alt="edit logo" />
-              <p>Editar registro</p>
-              <img src={deleteIcon} alt="delete logo" />
-              <p>Eliminar registro</p>
-              <img src={addIcon} alt="done logo" />
-              <p>Editar registro</p>
+            <img src={editIcon} alt="edit logo" />
+            <p className="dataUser">Editar registro</p>
+            <img src={deleteIcon} alt="delete logo" />
+            <p className="dataUser">Eliminar registro</p>
+            <img src={addIcon} alt="done logo" />
+            <p className="dataUser">Añadir al sorteo</p>
           </section>
 
-          <section className="listForm">
-            <table>
+          <section >
+            <table className="listForm">
               <thead>
                 <tr className="headerform">
                   <th className="title">Nombre</th>
@@ -224,7 +225,7 @@ const AdminList = () => {
                 ))}
               </tbody>
               <section className="selectedUsers">
-                <h2>Participantes en Sorteo</h2>
+                <h2 className="textlist">Participantes en Sorteo</h2>
                 <table>
                   <thead>
                     <tr>
@@ -238,10 +239,9 @@ const AdminList = () => {
                       <tr key={user.id}>
                         <td className="dataUser">{user.userName}</td>
                         <td className="dataUser">{user.surName}</td>
-                        <button onClick={() => handleRemoveFromSelection(user.id)}>
-                          Eliminar
-                        </button>
-                        {/* Agrega otros datos del usuario según sea necesario */}
+
+                        <img src={thumb_up} alt="deleteselect" onClick={() => handleRemoveFromSelection(user.id)} />
+
                       </tr>
                     ))}
                   </tbody>

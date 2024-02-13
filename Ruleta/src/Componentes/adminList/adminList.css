@@ -30,6 +30,7 @@
 
 .imputStyle{
     margin-top: 30px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .buttonForm{
@@ -57,20 +58,26 @@
     font-size: 13px;
 }
 
-/* .table {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-} */
+
+.textlist{
+    font-family: 'Montserrat', sans-serif;
+
+}
 
 .title {
     background-color: white;
     color: black;
+    font-family: 'Montserrat', sans-serif;
     height: 40px;
     border: 0;
     margin: 0;
     padding: 0;
     
+}
+
+.dataUser{
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 
