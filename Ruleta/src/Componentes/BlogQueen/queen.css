@@ -60,3 +60,50 @@ font-size: 24px;
     cursor: pointer;
   }
   
+  @media (max-width:   430px) {
+    .boton-diana {
+      width:   40px; /* Reduce el tamaño del botón para pantallas pequeñas */
+      height:   40px; /* Reduce el tamaño del botón para pantallas pequeñas */
+    }
+  
+    .cotilleos {
+      bottom: calc(100% +  10px); /* Reduce el espacio desde el borde inferior para pantallas pequeñas */
+      transform: translateX(-40px); /* Ajusta la posición horizontal del dropdown para pantallas pequeñas */
+    }
+  
+    .cotilleos h2 {
+      font-size:  18px; /* Reduce el tamaño del texto para pantallas más pequeñas */
+    }
+  
+    .cotilleos ul {
+      padding:  0; /* Elimina el padding para ajustar a pantallas pequeñas */
+    }
+  
+    .cotilleos li {
+      margin-bottom:  5px; /* Reduce el espacio entre elementos de la lista para pantallas pequeñas */
+    }
+  }
+
+  @media (min-width:   430px) {
+    .boton-diana {
+      width:   50px; /* Mantiene el tamaño del botón para pantallas más grandes */
+      height:   50px; /* Mantiene el tamaño del botón para pantallas más grandes */
+    }
+  
+    .cotilleos {
+      bottom: calc(100% +  20px); /* Mantiene el espacio desde el borde inferior para pantallas más grandes */
+      transform: translateX(-50px); /* Mantiene la posición horizontal del dropdown para pantallas más grandes */
+    }
+  
+    .cotilleos h2 {
+      font-size:  24px; /* Mantiene el tamaño del texto para pantallas más grandes */
+    }
+  
+    .cotilleos ul {
+      padding:  0; /* Mantiene el padding para pantallas más grandes */
+    }
+  
+    .cotilleos li {
+      margin-bottom:  10px; /* Mantiene el espacio entre elementos de la lista para pantallas más grandes */
+    }
+  }
