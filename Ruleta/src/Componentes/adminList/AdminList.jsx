@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import { UserService } from "../../../userService.js"
 import "./adminList.css"
+import Swal from 'sweetalert2';
 
 const AdminList = () => {
   const [adminList, setAdminList] = useState([]);
@@ -40,7 +41,7 @@ const AdminList = () => {
     } else {
       // Si no hay un ID de usuario en edición, crea un nuevo usuario
       await UserService.submitUser(data);
-      showAlert("Usuario creado correctamente");
+      // showAlert("Usuario creado correctamente");
     }
     methods.reset();
   });
@@ -63,6 +64,17 @@ const AdminList = () => {
     setSelectedUsers(updatedSelectedUsers);
   };
 
+
+  const alertButton = () => {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "¡Genial!",
+      text: "Añadido correctamente",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+}
 
 
   return (
@@ -149,7 +161,7 @@ const AdminList = () => {
               )}
             </label>
 
-            <button className="buttonForm" type="submit">
+            <button onClick={alertButton} className="buttonForm" type="submit">
               {editingUserId ? "Actualizar usuario" : "Añadir usuario"}
             </button>
           </form>

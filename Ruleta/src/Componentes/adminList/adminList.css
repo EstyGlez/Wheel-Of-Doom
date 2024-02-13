@@ -29,3 +29,10 @@
     margin-top: 35px;
 
 }
+
+
+/*Estilos para SweetAlert2*/
+
+.swal2-container.in {
+    background-color: black;
+}
