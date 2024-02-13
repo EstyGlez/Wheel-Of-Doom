@@ -24,7 +24,7 @@ function NavBar() {
                 <section className="options">
                     <div className="login">
                         <img src={iconlogin} alt="login" id="img_login"></img>
-                        <div className="usern">{username}</div>
+                        <p className="intro"> {username} </p>
                     </div>
 
                     <div className="logout">
