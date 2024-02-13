@@ -1,64 +1,57 @@
-
-
 .formhome {
     color: white;
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin-left: 198px;
+    margin-left: 140px;
     margin-right: 198px;
 
 }
 
-.imputStyle{
+.imputStyle {
     margin-top: 30px;
     color: white;
     margin-top: 100px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-  
+
 
 }
 
-input{
+input {
     color: white;
 }
 
-.imputStyle{
+.imputStyle {
     margin-top: 30px;
     margin-left: 50px;
-   
-}
-
-.listForm{
-    margin-top: 20px;
-   display: flex;
-   flex-direction: column;
-   justify-content: baseline;
-    margin-top: 20px;
-    margin-left: 50px;
 
 }
 
-.listForm{
+.listForm {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
     margin-left: 198px;
     margin-right: 198px;
+
+
 }
 
-.texthome{
+.texthome {
     width: 600px;
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-weight: lighter;
     font-style: italic;
     font-size: 21px;
-    line-height: 30px; 
+    line-height: 30px;
     text-align: center;
     margin: 100px auto;
 }
 
-.buttonForm{
+.buttonForm {
     color: black;
     background-color: white;
     width: 300px;
@@ -67,7 +60,7 @@ input{
 
 }
 
-.texlist{
+.texlist {
     margin-left: 50px;
 }
 
@@ -75,31 +68,29 @@ thead {
     background-color: white;
     color: black;
     border: white;
-    
+
 }
 
-.button-list{
+.button-list {
     display: flex;
     flex-direction: row;
     align-content: space-between;
-    
+
 }
 
-.tittle-list{
+.tittle-list {
     margin-top: 100px;
     display: flex;
     flex-direction: row;
 }
 
-.logotable{
+.logotable {
     display: flex;
     flex-direction: row;
 }
 
-.button-admin{
+.button-admin {
     background-color: transparent;
     border: none;
     width: 5px;
 }
-
-

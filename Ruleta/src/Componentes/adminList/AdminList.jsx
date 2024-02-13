@@ -158,6 +158,17 @@ const AdminList = () => {
             </form>
           </FormProvider>
         </section>
+        <section className="tittle-list">
+        <h3 className="texlist">Lista Principal</h3>
+        <div className="logotable">
+        <img src={editIcon} alt="edit logo" />
+        <p>Editar registro</p>
+        <img src={deleteIcon} alt="delete logo" />
+        <p>Eliminar registro</p>
+        <img src={addIcon} alt="done logo" />
+        <p>Editar registro</p>
+        </div>
+      </section>
 
         <section className="listForm">
           <table>
