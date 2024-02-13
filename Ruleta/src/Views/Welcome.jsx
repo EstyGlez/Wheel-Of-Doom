@@ -16,7 +16,7 @@ function Welcome() {
     };
 
     const goToRoulette = () => {
-        navigate('/ruleta');
+        navigate('/roulette');
     };
 
     return (

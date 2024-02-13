@@ -58,7 +58,3 @@ body {
     /* Cambia a color dorado al pasar el ratón */
 }
 
-.link.active {
-    text-decoration: underline;
-    /* Añade subrayado al enlace activo */
-}
