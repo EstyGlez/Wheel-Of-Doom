@@ -81,6 +81,7 @@
 }
 
 
+
 @media screen and (max-width: 430px) {
 
     
@@ -94,10 +95,11 @@
     
     }
 
-    .listForm, .selectedUsers{
-        overflow-x: auto;
+    .listForm, .tittle-list {
+        
+     margin-left: 300px;
+
     }
-  
   
   }
   

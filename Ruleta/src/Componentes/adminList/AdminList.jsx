@@ -192,7 +192,7 @@ const AdminList = () => {
                   <th className="title"></th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="dataform">
                 {adminList.map((user) => (
                   <tr key={user.id}>
                     <td className="dataUser">{user.userName}</td>
@@ -226,7 +226,7 @@ const AdminList = () => {
               </tbody>
               <section className="selectedUsers">
                 <h2 className="textlist">Participantes en Sorteo</h2>
-                <table>
+                <table className="selectform">
                   <thead>
                     <tr>
                       <th className="title">Nombre</th>
