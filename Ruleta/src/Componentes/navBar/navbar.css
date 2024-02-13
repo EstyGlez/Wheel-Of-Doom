@@ -15,24 +15,26 @@ body {
     align-items: center;
     margin-left: 146px;
     margin-right: 146px;
-    justify-content: space-between;
-    /* margin: 0 auto; */
+    justify-content: space-between;/* margin: 0 auto; */
 }
 
 .navbar_button {
     background-color: transparent;
     color: white;
     border: none;
+   
 }
 
 
 .options {
     display: flex;
     flex-direction: row;
+    margin-bottom: 62px;
 }
 
 #buttonform{
     padding-right: 56px;
+    margin-bottom: 60px;
     background-color: transparent;
     color: white;
     border: none;

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import { UserService } from "../../../userService.js"
 import "./adminList.css"
+import edit from "/src/assets/img/edit.png"
+import times_circle from "/src/assets/img/times_circle.png"
+import done from "/src/assets/img/done.png"
 
 const AdminList = () => {
   const [adminList, setAdminList] = useState([]);
@@ -66,16 +69,19 @@ const AdminList = () => {
 
 
   return (
-    <>
-    <p className="texthome">Bienvenidos a la web del colegio de la reina cotilla de las desarrolladoras.</p>
-    <p className="texthome"> Te invitamos a a jugar y a investigar,</p> 
-    <p className="texthome">¡encontrarás muchas noticias frescas!</p>
+
     <section className="container">
+
+      <p className="texthome">Bienvenidos a la web del colegio de la reina cotilla de las desarrolladoras.</p>
+      <p className="texthome"> Te invitamos a a jugar y a investigar,</p>
+      <p className="texthome">¡encontrarás muchas noticias frescas!</p>
+
+
       <section className="Form">
         <FormProvider {...methods}>
-          <form className="formhome"  onSubmit={onSubmit}>
+          <form className="formhome" onSubmit={onSubmit}>
             <label>
-              
+
               <input
                 className="imputStyle"
                 type="text"
@@ -90,7 +96,7 @@ const AdminList = () => {
             </label>
 
             <label>
-              
+
               <input
                 className="imputStyle"
                 type="text"
@@ -105,7 +111,7 @@ const AdminList = () => {
             </label>
 
             <label>
-              
+
               <input
                 className="imputStyle"
                 type="text"
@@ -120,7 +126,7 @@ const AdminList = () => {
             </label>
 
             <label>
-              
+
               <input
                 className="imputStyle"
                 type="text"
@@ -135,7 +141,7 @@ const AdminList = () => {
             </label>
 
             <label>
-              
+
               <input
                 className="imputStyle"
                 type="text"
@@ -154,6 +160,17 @@ const AdminList = () => {
             </button>
           </form>
         </FormProvider>
+      </section>
+      <section className="tittle-list">
+        <h3 className="texlist">Lista Principal</h3>
+        <div className="logotable">
+        <img src={edit} alt="edit logo" />
+        <p>Editar registro</p>
+        <img src={times_circle} alt="delete logo" />
+        <p>Eliminar registro</p>
+        <img src={done} alt="done logo" />
+        <p>Editar registro</p>
+        </div>
       </section>
 
       <section className="listForm">
@@ -177,15 +194,17 @@ const AdminList = () => {
                 <td className="dataUser">{user.email}</td>
                 <td className="dataUser">{user.phoneNumber}</td>
                 <td>
-                  <button onClick={() => handleEditUser(user.id, user)}>
-                    Editar
-                  </button>
-                  <button onClick={() => handleDeleteUser(user.id)}>
-                    Eliminar
-                  </button>
-                  <button onClick={() => handleSelectUser(user)}>
-                    Añadir a Sorteo
-                  </button>
+                  <div className="button-list">
+                    <button className="button-admin" onClick={() => handleEditUser(user.id, user)}>
+                      <img src={edit} />
+                    </button>
+                    <button className="button-admin" onClick={() => handleDeleteUser(user.id)}>
+                    <img src={times_circle} />
+                    </button>
+                    <button className="button-admin" onClick={() => handleSelectUser(user)}>
+                    <img src={done} />
+                    </button>
+                  </div>
                 </td>
               </tr>
             ))}
@@ -206,8 +225,8 @@ const AdminList = () => {
                     <td className="dataUser">{user.userName}</td>
                     <td className="dataUser">{user.surName}</td>
                     <button onClick={() => handleRemoveFromSelection(user.id)}>
-                    Eliminar
-                  </button>
+                      Eliminar
+                    </button>
                     {/* Agrega otros datos del usuario según sea necesario */}
                   </tr>
                 ))}
@@ -217,7 +236,7 @@ const AdminList = () => {
         </table>
       </section>
     </section>
-    </>
+
   );
 };
 
