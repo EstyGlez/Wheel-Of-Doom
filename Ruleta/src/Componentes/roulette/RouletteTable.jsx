@@ -51,27 +51,38 @@ const RouletteTable = ({ userList, onSorteoComplete }) => {
   };
 
   return (
-    <div className={`sorteo-container${spinning ? " spinning" : ""}`}>
-      <h2>Sorteo</h2>
-      <button
-        onClick={handleSorteo}
-        disabled={spinning}
-        className={spinning ? "stopped" : ""}
-      >
-        Encontrada!
-      </button>
-      <div className="roulette">
-        <div className={`wheel${spinning ? " spinning" : ""}`}>
-          <img src={rul} alt="Rueda de la ruleta" />
-        </div>
-        {selectedUser && (
-          <div className="resultado">
-            <p>La Reina Cotilla es:</p>
-            <p>{`${selectedUser.userName} ${selectedUser.surName}`}</p>
+    <section className="cont-roulette">
+      <section className="Inst">
+        <h2 className="text-roulette" >Instrucciones:</h2>
+          <ol>
+            <li className="text-roulette">Selecciona los participantes de la tabla anterior</li>
+            <li className="text-roulette">Haz girar la ruleta clicando en el botón: ¡Encuéntrala!</li>
+            <li className="text-roulette">Deja que la reina cotilla haga su trabajo</li>
+            <li className="text-roulette">¡¡¡Ya tienes una sospechosa!!!</li>
+          </ol>
+      
+      </section>
+      <div id="but-rou"  className={`sorteo-container${spinning ? " spinning" : ""}`}>
+        <button
+          onClick={handleSorteo}
+          disabled={spinning}
+          className={spinning ? "stopped" : ""}
+        >
+          ¡Encuéntrala!
+        </button>
+        <div className="roulette">
+          <div className={`wheel${spinning ? " spinning" : ""}`}>
+            <img src={rul} alt="Rueda de la ruleta" />
           </div>
-        )}
+          {selectedUser && (
+            <div className="resultado">
+              <p className="text-roulette">La Reina Cotilla es:</p>
+              <p className="text-roulette">{`${selectedUser.userName} ${selectedUser.surName}`}</p>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
