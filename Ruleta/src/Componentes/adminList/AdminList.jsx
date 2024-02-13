@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useForm, FormProvider } from "react-hook-form";
-import { UserService } from "../../../userService.js"
-import "./adminList.css"
-import edit from "/src/assets/img/edit.png"
-import times_circle from "/src/assets/img/times_circle.png"
-import done from "/src/assets/img/done.png"
+import { UserService } from "../../../userService.js";
+import "./adminList.css";
+import editIcon from './editicon.svg';
+import deleteIcon from './deleteicon.svg';
+import addIcon from './addicon.svg';
+import Swal from 'sweetalert2';
 
 const AdminList = () => {
   const [adminList, setAdminList] = useState([]);
@@ -66,177 +67,180 @@ const AdminList = () => {
     setSelectedUsers(updatedSelectedUsers);
   };
 
-
+  const alertButton = () => {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "¡Genial!",
+      text: "Añadido correctamente",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+}
 
   return (
+    <>
+      <p className="texthome">Bienvenidos a la web del colegio de la reina cotilla de las desarrolladoras.
+      Te invitamos a a jugar y a investigar,
+      ¡encontrarás muchas noticias frescas!</p>
+      <section className="container">
+        <section className="Form">
+          <FormProvider {...methods}>
+            <form className="formhome" onSubmit={onSubmit}>
+              <label>
 
-    <section className="container">
+                <input
+                  className="imputStyle"
+                  type="text"
+                  placeholder='Nombre'
+                  id="textUserName"
+                  name="userName"
+                  {...methods.register("userName", { required: true })}
+                />
+                {errors.userName && (
+                  <p className="error">El nombre de usuario es requerido.</p>
+                )}
+              </label>
 
-      <p className="texthome">Bienvenidos a la web del colegio de la reina cotilla de las desarrolladoras.</p>
-      <p className="texthome"> Te invitamos a a jugar y a investigar,</p>
-      <p className="texthome">¡encontrarás muchas noticias frescas!</p>
+              <label>
 
+                <input
+                  className="imputStyle"
+                  type="text"
+                  placeholder='Primer apellido'
+                  id="texSurName"
+                  name="surName"
+                  {...methods.register("surName", { required: true })}
+                />
+                {errors.surName && (
+                  <p className="error">El Primer Apellido es requerido.</p>
+                )}
+              </label>
 
-      <section className="Form">
-        <FormProvider {...methods}>
-          <form className="formhome" onSubmit={onSubmit}>
-            <label>
+              <label>
 
-              <input
-                className="imputStyle"
-                type="text"
-                placeholder='Nombre'
-                id="textUserName"
-                name="userName"
-                {...methods.register("userName", { required: true })}
-              />
-              {errors.userName && (
-                <p className="error">El nombre de usuario es requerido.</p>
-              )}
-            </label>
+                <input
+                  className="imputStyle"
+                  type="text"
+                  placeholder='Segundo apellido'
+                  id="textLastName"
+                  name="lastName"
+                  {...methods.register("lastName", { required: true })}
+                />
+                {errors.lastName && (
+                  <p className="error">El Segundo Apellido es requerido.</p>
+                )}
+              </label>
 
-            <label>
+              <label>
 
-              <input
-                className="imputStyle"
-                type="text"
-                placeholder='Primer apellido'
-                id="texSurName"
-                name="surName"
-                {...methods.register("surName", { required: true })}
-              />
-              {errors.surName && (
-                <p className="error">El Primer Apellido es requerido.</p>
-              )}
-            </label>
+                <input
+                  className="imputStyle"
+                  type="text"
+                  placeholder='Correo Electrónico'
+                  id="textEmail"
+                  name="email"
+                  {...methods.register("email", { required: true })}
+                />
+                {errors.email && (
+                  <p className="error">El correo electrónico es requerido.</p>
+                )}
+              </label>
 
-            <label>
+              <label>
 
-              <input
-                className="imputStyle"
-                type="text"
-                placeholder='Segundo apellido'
-                id="textLastName"
-                name="lastName"
-                {...methods.register("lastName", { required: true })}
-              />
-              {errors.lastName && (
-                <p className="error">El Segundo Apellido es requerido.</p>
-              )}
-            </label>
+                <input
+                  className="imputStyle"
+                  type="text"
+                  placeholder='Teléfono'
+                  id="textPhoneNumer"
+                  name="phoneNumber"
+                  {...methods.register("phoneNumber", { required: true })}
+                />
+                {errors.phoneNumber && (
+                  <p className="error">El teléfono es requerido.</p>
+                )}
+              </label>
 
-            <label>
+              <button onClick={alertButton} className="buttonForm" type="submit">
+                {editingUserId ? "Actualizar usuario" : "Añadir usuario"}
+              </button>
+            </form>
+          </FormProvider>
+        </section>
 
-              <input
-                className="imputStyle"
-                type="text"
-                placeholder='Correo Electrónico'
-                id="textEmail"
-                name="email"
-                {...methods.register("email", { required: true })}
-              />
-              {errors.email && (
-                <p className="error">El correo electrónico es requerido.</p>
-              )}
-            </label>
-
-            <label>
-
-              <input
-                className="imputStyle"
-                type="text"
-                placeholder='Teléfono'
-                id="textPhoneNumer"
-                name="phoneNumber"
-                {...methods.register("phoneNumber", { required: true })}
-              />
-              {errors.phoneNumber && (
-                <p className="error">El teléfono es requerido.</p>
-              )}
-            </label>
-
-            <button className="buttonForm" type="submit">
-              {editingUserId ? "Actualizar usuario" : "Añadir usuario"}
-            </button>
-          </form>
-        </FormProvider>
-      </section>
-      <section className="tittle-list">
-        <h3 className="texlist">Lista Principal</h3>
-        <div className="logotable">
-        <img src={edit} alt="edit logo" />
-        <p>Editar registro</p>
-        <img src={times_circle} alt="delete logo" />
-        <p>Eliminar registro</p>
-        <img src={done} alt="done logo" />
-        <p>Editar registro</p>
-        </div>
-      </section>
-
-      <section className="listForm">
-        <table>
-          <thead>
-            <tr>
-              <th className="title">Nombre</th>
-              <th className="title">Primer Apellido</th>
-              <th className="title">Segundo Apellido</th>
-              <th className="title">Correo Electrónico</th>
-              <th className="title">Número de Teléfono</th>
-              <th className="title"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {adminList.map((user) => (
-              <tr key={user.id}>
-                <td className="dataUser">{user.userName}</td>
-                <td className="dataUser">{user.surName}</td>
-                <td className="dataUser">{user.lastName}</td>
-                <td className="dataUser">{user.email}</td>
-                <td className="dataUser">{user.phoneNumber}</td>
-                <td>
-                  <div className="button-list">
-                    <button className="button-admin" onClick={() => handleEditUser(user.id, user)}>
-                      <img src={edit} />
-                    </button>
-                    <button className="button-admin" onClick={() => handleDeleteUser(user.id)}>
-                    <img src={times_circle} />
-                    </button>
-                    <button className="button-admin" onClick={() => handleSelectUser(user)}>
-                    <img src={done} />
-                    </button>
-                  </div>
-                </td>
+        <section className="listForm">
+          <table>
+            <thead>
+              <tr className="headerform">
+                <th className="title">Nombre</th>
+                <th className="title">Primer Apellido</th>
+                <th className="title">Segundo Apellido</th>
+                <th className="title">Correo Electrónico</th>
+                <th className="title">Nº Teléfono</th>
+                <th className="title"></th>
               </tr>
-            ))}
-          </tbody>
-          <section className="selectedUsers">
-            <h2>Participantes en Sorteo</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th className="title">Nombre</th>
-                  <th className="title">Primer Apellido</th>
-                  {/* Agrega otros encabezados según sea necesario */}
-                </tr>
-              </thead>
-              <tbody>
-                {selectedUsers.map((user) => (
-                  <tr key={user.id}>
-                    <td className="dataUser">{user.userName}</td>
-                    <td className="dataUser">{user.surName}</td>
-                    <button onClick={() => handleRemoveFromSelection(user.id)}>
-                      Eliminar
-                    </button>
-                    {/* Agrega otros datos del usuario según sea necesario */}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </section>
-        </table>
-      </section>
-    </section>
+            </thead>
+            <tbody>
+              {adminList.map((user) => (
+                <tr key={user.id}>
+                  <td className="dataUser">{user.userName}</td>
+                  <td className="dataUser">{user.surName}</td>
+                  <td className="dataUser">{user.lastName}</td>
+                  <td className="dataUser">{user.email}</td>
+                  <td className="dataUser">{user.phoneNumber}</td>
+                  <td>
 
+                    <img
+                      src={editIcon}
+                      alt="Editar"
+                      onClick={() => handleEditUser(user.id, user)}
+                    />
+
+                    <img
+                      src={deleteIcon}
+                      alt="Eliminar"
+                      onClick={() => handleDeleteUser(user.id)}
+                    />
+
+                    <img
+                      src={addIcon}
+                      alt="Añadir al sorteo"
+                      onClick={() => handleSelectUser(user)}
+                    />
+
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+            <section className="selectedUsers">
+              <h2>Participantes en Sorteo</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th className="title">Nombre</th>
+                    <th className="title">Primer Apellido</th>
+                    {/* Agrega otros encabezados según sea necesario */}
+                  </tr>
+                </thead>
+                <tbody>
+                  {selectedUsers.map((user) => (
+                    <tr key={user.id}>
+                      <td className="dataUser">{user.userName}</td>
+                      <td className="dataUser">{user.surName}</td>
+                      <button onClick={() => handleRemoveFromSelection(user.id)}>
+                        Eliminar
+                      </button>
+                      {/* Agrega otros datos del usuario según sea necesario */}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </section>
+          </table>
+        </section>
+      </section>
+    </>
   );
 };
 

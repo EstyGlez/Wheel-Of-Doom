@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import "./queen.css";
 import ads_click from './ads_click.svg';
 
