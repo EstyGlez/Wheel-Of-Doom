@@ -45,6 +45,8 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -80,4 +82,36 @@ body {
 
 .sorteo-container.spinning .button-container {
   transform: rotate(360deg);
+}
+
+
+@media screen and (max-width: 430px) {
+
+  .cont-roulette {
+
+
+      display: flex;
+      flex-direction: column;
+
+  }
+
+  #but-rou{
+    display: flex;
+    flex-direction: column;
+    margin-top: 220px;
+    position: static; 
+    z-index: auto;
+    
+  }
+
+  .Inst{
+    margin-left: 400px;
+  }
+
+  .wheel img{
+    margin-top: 20px;
+  }
+
+
+
 }
