@@ -38,8 +38,8 @@ function Welcome() {
                         Bienvenida @usuaria! En esta web podrás acceder a la lista de los alumnos más estilosos de Málaga y podrás hacer que participen en cualquiera de tus sorteos. Pincha abajo y accede directamente.
                     </p>
                     <div className="buttonbox">
-                        <button type="submit">FORMULARIO</button>
-                        <button type="submit">RULETA DE LA SUERTE</button>
+                        <button className="button-wel"type="submit">FORMULARIO</button>
+                        <button className="button-wel"type="submit">RULETA DE LA SUERTE</button>
                     </div>
                     <img className='xoxo' src={xoxo} alt="xoxo"></img>
                 </section>

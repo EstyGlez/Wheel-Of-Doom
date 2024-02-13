@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import "./queen.css"
+import "./queen.css";
+import ads_click from './ads_click.svg';
 
 const CotillaComponente = () => {
   const [mostrarCotilleos, setMostrarCotilleos] = useState(false);
@@ -17,8 +18,11 @@ const CotillaComponente = () => {
 
   return (
     <div>
-      <h1>La Reina Cotilla</h1>
-      <button onClick={toggleMostrarCotilleos}>Reina Cotilla</button>
+
+      <button onClick={toggleMostrarCotilleos} className="boton-diana">
+        <img src={ads_click} alt="Botón de Diana" />
+      </button>
+
       {mostrarCotilleos && (
         <div className="cotilleos">
           <h2>¡Cotilleos Calientes!</h2>
