@@ -81,4 +81,25 @@
 }
 
 
+@media screen and (max-width: 430px) {
+
+    
+    .formhome {
+        
+        display: flex;
+        flex-direction: column;
+       margin-left: 350px;
+        
+        
+    
+    }
+
+    .listForm, .selectedUsers{
+        overflow-x: auto;
+    }
+  
+  
+  }
+  
+
 
