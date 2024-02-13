@@ -1,7 +1,7 @@
 //import React from 'react'
 import Queen from "../BlogQueen/Queen.jsx";
 import "./footer.css";
-import la_reina from "./images_footer/la_reina.svg";
+import la_reina from "./images-footer/la_reina.svg";
 
 function Footer() {
 
@@ -17,6 +17,6 @@ function Footer() {
             </footer>
         </>
     );
-};
+}
 
 export default Footer;

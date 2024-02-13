@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import RouletteTable from "../Componentes/roulette/RouletteTable.jsx";
 import { UserService } from '../../userService.js';
 import NavBar from '../Componentes/navBar/NavBar.jsx';
+import Footer from '../Componentes/footer/Footer.jsx';
 
 function Roulette() {
   const [userList, setUserList] = useState([]); // Estado para almacenar la lista de usuarios
@@ -29,6 +30,7 @@ function Roulette() {
     <>
       <NavBar />
       <RouletteTable userList={userList} onSorteoComplete={handleSorteoComplete} />
+      <Footer />
     </>
   );
 }
