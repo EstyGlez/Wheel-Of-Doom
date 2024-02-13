@@ -1,0 +1,65 @@
+footer {
+    background-color: black;
+   
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    bottom:  0;
+    left:  0;
+    right:  0;
+
+}
+
+footer section {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    /* Agrega un poco de espacio vertical para mejor visualización */
+
+
+}
+
+footer img {
+    max-width: 100%;
+    /* Asegura que las imágenes no excedan el ancho del contenedor */
+    height: auto;
+    /* Mantiene la relación de aspecto */
+    padding: 10px;
+}
+
+
+footer h1 {
+ 
+    font-weight: bold;
+   
+    margin: 10px;
+   
+    padding: 0 10px;
+  
+        text-align: right; /* Alinea el texto a la derecha */
+        font-size:  xx-small; /* Ajusta el tamaño del texto a  2 veces el tamaño normal */
+ 
+}
+
+.la_reina {
+    /* background-color: transparent; */
+    
+
+    margin-top: 1549px;
+    /* Aplica un margen solo a la parte superior */
+    margin-right: 877px;
+    /* Aplica un margen solo a la derecha */
+    margin-bottom: 54px;
+    /* Aplica un margen solo a la parte inferior */
+    margin-left: 146px;
+    /* Aplica un margen solo a la izquierda */
+
+}

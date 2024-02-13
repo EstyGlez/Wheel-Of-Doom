@@ -1,53 +1,62 @@
-.container {
-    background-color: rgb(29, 27, 27);
-    color: rgb(238, 216, 16);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 20px;
-  }
+.boton-diana {
+  background-color: transparent;
+  background-image: url('./ads_click.svg'); 
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen en el botón */
+    position: static;
+   margin: 0;
+    padding:  10px  20px; /* Ajusta el padding para hacer el botón más grande */
+    width:  50px; /* O establece un ancho explícito */
+    height:  50px; /* Y un alto explícito si es necesario */
   
+  }
+  main { 
+    position: relative;
+  }
+
+
+
   h1 {
     color: gold;
     font-size: 36px;
     text-align: center;
   }
-  
-  button {
-    background-color: gold;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-  }
-  
+
+
   .cotilleos {
-    background-color: #535151;
-    color:gold;
+    position: absolute;
+    bottom: calc(100% + 20px);
+    left: 50%;
+    transform: translateX(-50px);
+    z-index: 10;
+    background-color: #a44343;
+
+    /* background-color: #535151; */
+    color: black;
     padding: 20px;
-    margin-top: 20px;
     border-radius: 10px;
   }
-  
+
   .cotilleos h2 {
-    color: gold;
-    font-size: 24px;
+color: black;
+font-size: 24px;
+
   }
-  
-  ul {
+
+  .cotilleos ul {
     list-style-type: none;
     padding: 0;
   }
-  
-  li {
+
+  .cotilleos li {
     margin-bottom: 10px;
   }
-  
+
   .navbar-button {
     background-color: transparent;
     color: gold;
     border: none;
-    padding: 10px 20px;
-    margin: 10px;
+    padding: 10px;
     cursor: pointer;
   }
   
