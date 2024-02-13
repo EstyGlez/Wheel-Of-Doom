@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useForm, FormProvider } from "react-hook-form";
-import { UserService } from "../../../userService.js"
-import "./adminList.css"
-import editIcon from './editicon.svg'
-import deleteIcon from './deleteicon.svg'
-import addIcon from './addicon.svg'
-
+import { UserService } from "../../../userService.js";
+import "./adminList.css";
+import editIcon from './editicon.svg';
+import deleteIcon from './deleteicon.svg';
+import addIcon from './addicon.svg';
+import Swal from 'sweetalert2';
 
 const AdminList = () => {
   const [adminList, setAdminList] = useState([]);
@@ -67,6 +67,16 @@ const AdminList = () => {
     setSelectedUsers(updatedSelectedUsers);
   };
 
+  const alertButton = () => {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "¡Genial!",
+      text: "Añadido correctamente",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+}
 
   return (
     <>
@@ -152,7 +162,7 @@ const AdminList = () => {
                 )}
               </label>
 
-              <button className="buttonForm" type="submit">
+              <button onClick={alertButton} className="buttonForm" type="submit">
                 {editingUserId ? "Actualizar usuario" : "Añadir usuario"}
               </button>
             </form>

@@ -44,3 +44,11 @@ input::placeholder {
     height: 44px;
     font-weight: bold;
 }
+
+@media (max-width: 430px) {
+
+    .logoandlogin {
+        flex-wrap: wrap;
+    }
+    
+    }
