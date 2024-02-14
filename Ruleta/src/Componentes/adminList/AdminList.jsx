@@ -231,7 +231,7 @@ const AdminList = () => {
                     <tr>
                       <th className="title">Nombre</th>
                       <th className="title">Primer Apellido</th>
-                      {/* Agrega otros encabezados según sea necesario */}
+                      
                     </tr>
                   </thead>
                   <tbody>
