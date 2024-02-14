@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import rul from "/src/assets/img/rul.png"
 import "./rouletteTable.css"
 
@@ -28,17 +28,17 @@ const RouletteTable = ({ userList, onSorteoComplete }) => {
 
     setSpinning(true);
 
-    // Espera 2 segundos antes de girar la ruleta
+   
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    // Simula la animación de la ruleta girando
+    
     for (let i = 0; i < 10; i++) {
       await new Promise((resolve) => setTimeout(resolve, 200));
       const randomIndex = Math.floor(Math.random() * remainingUsers.length);
       setSelectedUser(remainingUsers[randomIndex]);
     }
 
-    // Detiene la animación y selecciona al ganador
+   
     await new Promise((resolve) => setTimeout(resolve, 1000));
     setSpinning(false);
     const randomIndex = Math.floor(Math.random() * remainingUsers.length);
@@ -46,32 +46,43 @@ const RouletteTable = ({ userList, onSorteoComplete }) => {
     setSelectedUser(selected);
     setRemainingUsers(remainingUsers.filter((user) => user.id !== selected.id));
 
-    // Notifica al componente padre que el sorteo ha finalizado
+  
     onSorteoComplete();
   };
 
   return (
-    <div className={`sorteo-container${spinning ? " spinning" : ""}`}>
-      <h2>Sorteo</h2>
-      <button
-        onClick={handleSorteo}
-        disabled={spinning}
-        className={spinning ? "stopped" : ""}
-      >
-        Encontrada!
-      </button>
-      <div className="roulette">
-        <div className={`wheel${spinning ? " spinning" : ""}`}>
-          <img src={rul} alt="Rueda de la ruleta" />
-        </div>
-        {selectedUser && (
-          <div className="resultado">
-            <p>La Reina Cotilla es:</p>
-            <p>{`${selectedUser.userName} ${selectedUser.surName}`}</p>
+    <section className="cont-roulette">
+      <section className="Inst">
+        <h2 className="text-roulette" >Instrucciones:</h2>
+          <ol>
+            <li className="text-roulette">Selecciona los participantes de la tabla anterior</li>
+            <li className="text-roulette">Haz girar la ruleta clicando en el botón: ¡Encuéntrala!</li>
+            <li className="text-roulette">Deja que la reina cotilla haga su trabajo</li>
+            <li className="text-roulette">¡¡¡Ya tienes una sospechosa!!!</li>
+          </ol>
+      
+      </section>
+      <div id="but-rou"  className={`sorteo-container${spinning ? " spinning" : ""}`}>
+        <button
+          onClick={handleSorteo}
+          disabled={spinning}
+          className={spinning ? "stopped" : ""}
+        >
+          ¡Encuéntrala!
+        </button>
+        <div className="roulette">
+          <div className={`wheel${spinning ? " spinning" : ""}`}>
+            <img src={rul} alt="Rueda de la ruleta" />
           </div>
-        )}
+          {selectedUser && (
+            <div className="resultado">
+              <p className="text-roulette">La Reina Cotilla es:</p>
+              <p className="text-roulette">{`${selectedUser.userName} ${selectedUser.surName}`}</p>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

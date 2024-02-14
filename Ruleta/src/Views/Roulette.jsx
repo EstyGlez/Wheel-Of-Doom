@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import RouletteTable from "../Componentes/roulette/RouletteTable.jsx";
 import { UserService } from '../../userService.js';
-
+import NavBar from '../Componentes/navBar/NavBar.jsx';
+import Footer from '../Componentes/footer/Footer.jsx';
 
 function Roulette() {
-  const [userList, setUserList] = useState([]); // Estado para almacenar la lista de usuarios
+  const [userList, setUserList] = useState([]); 
   
 
   useEffect(() => {
-    // Llama a UserService para obtener la lista de usuarios al montar el componente
+    
     async function fetchData() {
       try {
         const users = await UserService.getAllUsers();
@@ -18,16 +19,18 @@ function Roulette() {
       }
     }
     fetchData();
-  }, []); // Llama a useEffect solo una vez al montar el componente
+  }, []); 
 
   const handleSorteoComplete = () => {
-    // Lógica que quieres ejecutar cuando el sorteo ha finalizado
+   
     console.log("Sorteo completado");
   };
 
   return (
     <>
+      <NavBar />
       <RouletteTable userList={userList} onSorteoComplete={handleSorteoComplete} />
+      <Footer />
     </>
   );
 }
