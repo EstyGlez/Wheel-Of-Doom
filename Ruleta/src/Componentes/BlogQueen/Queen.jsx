@@ -19,7 +19,13 @@ const CotillaComponente = () => {
   return (
     <div>
 
+<<<<<<< HEAD
     
+=======
+      {/* <button onClick={toggleMostrarCotilleos} className="boton-diana">
+        <img src={ads_click} alt="Botón de Diana" />
+      </button> */}
+>>>>>>> c8743d6e251b8a08b535b651cc11def078df114d
 
       <img
         src={ads_click}

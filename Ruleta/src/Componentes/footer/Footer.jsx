@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> c8743d6e251b8a08b535b651cc11def078df114d
 import Queen from "../BlogQueen/Queen.jsx";
 import "./footer.css";
 import la_reina from "./images-footer/la_reina.svg";

@@ -54,53 +54,15 @@
     padding-right: 300px;
 }
 
-.tittle-list p {
-    font-size: 13px;
+.logotable{
+    display: flex;
+    flex-direction: row;
 }
 
-
-.textlist{
-    font-family: 'Montserrat', sans-serif;
-
+.button-admin{
+    background-color: transparent;
+    border: none;
+    width: 5px;
 }
-
-.title {
-    background-color: white;
-    color: black;
-    font-family: 'Montserrat', sans-serif;
-    height: 40px;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    
-}
-
-.dataUser{
-    font-family: 'Montserrat', sans-serif;
-
-}
-
-
-
-@media screen and (max-width: 430px) {
-
-    
-    .formhome {
-        
-        display: flex;
-        flex-direction: column;
-       margin-left: 350px;
-        
-        
-    
-    }
-
-    .listForm, .tittle-list {
-        
-     margin-left: 300px;
-
-    }
-  
-  }
 
 

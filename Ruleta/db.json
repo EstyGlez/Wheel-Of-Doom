@@ -1,22 +1,15 @@
 {
   "users": [
     {
-      "id": "bc17",
-      "userName": "Estíbalizñflakjsdfljadsf",
-      "surName": "felipeasdfasdf",
-      "lastName": "fasdf",
-      "email": "fdfd",
-      "phoneNumber": "fdfd"
-    },
-    {
-      "id": "7422",
+      "id": "27fe",
       "userName": "Sandra",
-      "surName": "Medina",
-      "lastName": "Luque",
-      "email": "ffghfhg@g.con",
-      "phoneNumber": "6666666"
+      "surName": "Chupi",
+      "lastName": "Max",
+      "email": "sandra@gmail.com",
+      "phoneNumber": "444444"
     },
     {
+<<<<<<< HEAD
       "id": "9953",
       "userName": "gop",
       "surName": "medina",
@@ -31,6 +24,38 @@
       "lastName": "Pérez",
       "email": "estibaliz87gonzalez@gmail.com",
       "phoneNumber": "633157005"
+=======
+      "id": "7110",
+      "userName": "Esty",
+      "surName": "guay",
+      "lastName": "chupi",
+      "email": "estyguay@gmail.com",
+      "phoneNumber": "555555"
+    },
+    {
+      "id": "5fef",
+      "userName": "Inés",
+      "surName": "Diver",
+      "lastName": "Diva",
+      "email": "inesdiver@gmail.com",
+      "phoneNumber": "111111"
+    },
+    {
+      "id": "adfe",
+      "userName": "Lorena",
+      "surName": "Mega",
+      "lastName": "Pasote",
+      "email": "lorenamega@gmail.com",
+      "phoneNumber": "999999"
+    },
+    {
+      "id": "b84e",
+      "userName": "Mercedes",
+      "surName": "Super",
+      "lastName": "Maquina",
+      "email": "mercedessuper@gmail.com",
+      "phoneNumber": "666666"
+>>>>>>> c8743d6e251b8a08b535b651cc11def078df114d
     }
   ]
 }

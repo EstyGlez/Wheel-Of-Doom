@@ -9,7 +9,11 @@ function Home() {
   
 
   useEffect(() => {
+<<<<<<< HEAD
     
+=======
+   
+>>>>>>> c8743d6e251b8a08b535b651cc11def078df114d
     async function fetchData() {
       try {
         const users = await UserService.getAllUsers();
@@ -20,7 +24,10 @@ function Home() {
     }
     fetchData();
   }, []); 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c8743d6e251b8a08b535b651cc11def078df114d
   
 
   return (

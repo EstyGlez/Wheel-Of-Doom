@@ -22,7 +22,11 @@ function Roulette() {
   }, []); 
 
   const handleSorteoComplete = () => {
+<<<<<<< HEAD
     
+=======
+   
+>>>>>>> c8743d6e251b8a08b535b651cc11def078df114d
     console.log("Sorteo completado");
   };
 
