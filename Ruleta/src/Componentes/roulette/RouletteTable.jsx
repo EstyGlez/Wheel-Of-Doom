@@ -28,17 +28,17 @@ const RouletteTable = ({ userList, onSorteoComplete }) => {
 
     setSpinning(true);
 
-    // Espera 2 segundos antes de girar la ruleta
+   
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    // Simula la animación de la ruleta girando
+    
     for (let i = 0; i < 10; i++) {
       await new Promise((resolve) => setTimeout(resolve, 200));
       const randomIndex = Math.floor(Math.random() * remainingUsers.length);
       setSelectedUser(remainingUsers[randomIndex]);
     }
 
-    // Detiene la animación y selecciona al ganador
+   
     await new Promise((resolve) => setTimeout(resolve, 1000));
     setSpinning(false);
     const randomIndex = Math.floor(Math.random() * remainingUsers.length);
@@ -46,7 +46,7 @@ const RouletteTable = ({ userList, onSorteoComplete }) => {
     setSelectedUser(selected);
     setRemainingUsers(remainingUsers.filter((user) => user.id !== selected.id));
 
-    // Notifica al componente padre que el sorteo ha finalizado
+  
     onSorteoComplete();
   };
 

@@ -38,12 +38,12 @@ const AdminList = () => {
 
   const onSubmit = methods.handleSubmit(async (data) => {
     if (editingUserId) {
-      // Si hay un ID de usuario en edición, actualiza el usuario
+     
       await UserService.updateUser(editingUserId, data);
       showAlert("Usuario actualizado correctamente");
       setEditingUserId(null);
     } else {
-      // Si no hay un ID de usuario en edición, crea un nuevo usuario
+      
       await UserService.submitUser(data);
       showAlert("Usuario creado correctamente");
     }
@@ -52,12 +52,12 @@ const AdminList = () => {
 
   const handleEditUser = (userId, userData) => {
     setEditingUserId(userId);
-    // Establece los valores del formulario con los datos del usuario que se está editando
+   
     methods.reset(userData);
   };
 
   const handleSelectUser = (user) => {
-    // Verifica si el usuario ya está seleccionado; si no lo está, agrégalo al estado selectedUsers
+  
     if (!selectedUsers.some((selectedUser) => selectedUser.id === user.id)) {
       setSelectedUsers([...selectedUsers, user]);
     }

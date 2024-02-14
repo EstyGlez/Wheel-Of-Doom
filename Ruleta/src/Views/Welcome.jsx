@@ -1,4 +1,4 @@
-/* import React from 'react'*/
+
 import "./welcome.css"
 import logo from "./images/logo.svg"
 import xoxo from "./images/xoxo.svg"
@@ -45,5 +45,4 @@ function Welcome() {
 
 export default Welcome
 
-// <Link to="/home" className="link">FORMULARIO</Link>
-// <Link to="/roulette" className="link">RULETA</Link>
+
