@@ -18,7 +18,6 @@ const CotillaComponente = () => {
 
   return (
     <div>
-
       <button onClick={toggleMostrarCotilleos} className="boton-diana"></button>
 
       {mostrarCotilleos && (

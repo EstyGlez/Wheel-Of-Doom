@@ -12,12 +12,16 @@ function Footer() {
                     <div className="footer-content">
                         <div className="content-boton">
 
-                             <img src={la_reina} alt='reina_cotilla' />
-                             <Queen />
-                             
+                            <img src={la_reina} alt='reina_cotilla' />
+                            <Queen />
+
+                        </div>
+                        <div className="content-copy">
+
+                            <h1>&copy; Developed by Grupo 4 Creations © </h1>
+              
                         </div>
                     </div>
-                    <h1>&copy; Developed by Grupo 4 Creations © </h1>
                 </section>
             </footer>
         </>

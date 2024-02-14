@@ -1,75 +1,109 @@
 footer {
-    background-color: black;
-    max-height: 60px;
+    max-height: 40px;
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    bottom: 0;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
+    justify-content: flex-start;
+
+    position: sticky;
+    top: 100vh;
+
     left: 0;
     right: 0;
 
 }
+
 .footer-content {
-    display:flex;
-    align-items:flex-end;
-    gap: 10px;
-
-}
-
-footer section {
-    position: relative;
+    max-height: 80px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    margin-left: 10px;
+    position: absolute;
+
+
+
+
     width: 100%;
-    padding: 5px 0;
-    /* Agrega un poco de espacio vertical para mejor visualización */
-
+    gap: 10px;
 }
-
-.footer-content .boton-diana {
-    width: 26px;
-    height: 26px;
-    background-size: contain;
-}
-
 
 .content-boton {
+    max-height: 40px;
     display: flex;
-    align-items: center;
+    position: relative;
+    justify-content: flex-start;
+    align-items: flex-start;
+
 }
 
-footer img {
-    max-width: 100%;
+.content-copy h1 {
+    max-height: 40px;
+    float: right;
+    position: absolute;
+    margin-left: 10px;
+    padding-top: 50px;
+    margin-top: auto;
+    right: 0;
+
+
+}
+
+.footer-content img {
+    display: flex;
+    justify-content: flex-end;
+    position: left;
+    height: 80px;
+    width: auto;
     /* Asegura que las imágenes no excedan el ancho del contenedor */
-    height: auto;
+
     /* Mantiene la relación de aspecto */
-    padding: 5px;
+    padding: 0px;
+    padding-right: 0;
+    margin-top: 10px;
+    margin-right: 0;
+
 }
 
+button.boton-diana {
+    max-height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+    margin-right: 0;
+    margin-top: 0;
+    float: right;
+
+}
 
 footer h1 {
-    font-size: 7px;
+    max-height: 40px;
 
-    font-weight: bold;
-
-    margin-top: 5px;
-
-    padding: 0 10px;
+    display: flex;
+    justify-content: flex-start;
+    /* Alinea el texto a la derecha */
+    align-items: flex-start;
+    /* Alinea el h1 hacia la parte inferior */
 
     text-align: right;
     /* Alinea el texto a la derecha */
+    font-size: 15px;
+    font-weight: bold;
+
+
+    padding: 0;
+
 
 }
 
 .la_reina {
     /* background-color: transparent; */
-
+    display: flex;
+    justify-content: flex-end;
 
     margin-top: 1549px;
     /* Aplica un margen solo a la parte superior */
@@ -82,53 +116,3 @@ footer h1 {
 
 }
 
-@media (max-width: 430px) {
-    footer {
-        flex-direction: column;
-        /* Cambia la dirección de flexión para apilar los elementos verticalmente */
-        padding: 10px 0;
-        /* Ajusta el padding para mejorar la apariencia en pantallas pequeñas */
-    }
-
-    footer img {
-        width: 100%;
-        /* Hace que la imagen ocupe todo el ancho disponible */
-        padding: 0;
-        /* Reduce o elimina el padding de la imagen */
-    }
-
-    footer h1 {
-        font-size: 7px;
-        /* Reduce el tamaño de la fuente para pantallas pequeñas */
-        margin: 5px;
-        /* Reduce el margen para ajustar el espaciado */
-        margin-top: 5px;
-    }
-
-    /* Ajusta otros elementos si es necesario */
-}
-
-@media (min-width: 430px) {
-    footer {
-        flex-direction: row;
-        /* Vuelve a la dirección de flexión original para un diseño horizontal */
-        padding: 10px 0;
-        /* Ajusta el padding para el diseño de escritorio */
-    }
-
-    footer img {
-        width: auto;
-        /* Permite que la imagen mantenga su tamaño original */
-        padding: 10px;
-        /* Añade padding a la imagen si es necesario */
-    }
-
-    footer h1 {
-        font-size: 7px;
-        /* Aumenta el tamaño de la fuente para pantallas más grandes */
-        margin: 10px;
-        /* Ajusta el margen para pantallas más grandes */
-    }
-
-    /* Ajusta otros elementos si es necesario */
-}
