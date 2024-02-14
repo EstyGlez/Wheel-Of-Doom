@@ -40,12 +40,13 @@ const AdminList = () => {
     if (editingUserId) {
      
       await UserService.updateUser(editingUserId, data);
-      showAlert("Usuario actualizado correctamente");
+      alertButton(true);
       setEditingUserId(null);
-    } else {
+    } 
+    else {
       
       await UserService.submitUser(data);
-      showAlert("Usuario creado correctamente");
+      alertButton(true);
     }
     methods.reset();
   });
@@ -164,7 +165,7 @@ const AdminList = () => {
                   )}
                 </label>
 
-                <button onClick={alertButton} className="buttonForm" type="submit">
+                <button onClick={onSubmit} className="buttonForm" type="submit">
                   {editingUserId ? "Actualizar usuario" : "Añadir usuario"}
                 </button>
               </form>
