@@ -80,6 +80,7 @@ const AdminList = () => {
 
   return (
     <>
+    <section className="content">
       <p className="texthome">Bienvenidos a la web del colegio de la reina cotilla de las desarrolladoras.
       Te invitamos a a jugar y a investigar,
       ¡encontrarás muchas noticias frescas!</p>
@@ -169,6 +170,16 @@ const AdminList = () => {
           </FormProvider>
         </section>
 
+        <section className="tittle-list">
+            <h2 className="textlist">Lista Principal</h2>
+            <img src={editIcon} alt="edit logo" />
+            <p className="dataUser">Editar registro</p>
+            <img src={deleteIcon} alt="delete logo" />
+            <p className="dataUser">Eliminar registro</p>
+            <img src={addIcon} alt="done logo" />
+            <p className="dataUser">Añadir al sorteo</p>
+          </section>
+
         <section className="listForm">
           <table>
             <thead>
@@ -214,13 +225,13 @@ const AdminList = () => {
               ))}
             </tbody>
             <section className="selectedUsers">
-              <h2>Participantes en Sorteo</h2>
+              <h2 className="textlist">Participantes en Sorteo</h2>
               <table>
                 <thead>
                   <tr>
                     <th className="title">Nombre</th>
                     <th className="title">Primer Apellido</th>
-                    {/* Agrega otros encabezados según sea necesario */}
+                  
                   </tr>
                 </thead>
                 <tbody>
@@ -231,7 +242,7 @@ const AdminList = () => {
                       <button onClick={() => handleRemoveFromSelection(user.id)}>
                         Eliminar
                       </button>
-                      {/* Agrega otros datos del usuario según sea necesario */}
+                    
                     </tr>
                   ))}
                 </tbody>
@@ -239,6 +250,7 @@ const AdminList = () => {
             </section>
           </table>
         </section>
+      </section>
       </section>
     </>
   );

@@ -1,105 +1,106 @@
-
-
-.formhome {
-    color: white;
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-left: 198px;
-    margin-right: 198px;
-
+.content {
+    width: 1000px;
+    margin: 0 auto ;
 }
 
-.imputStyle{
-    margin-top: 30px;
-    color: white;
-    margin-top: 100px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  
-
-}
-
-input{
-    color: white;
-}
-
-.imputStyle{
-    margin-top: 30px;
-    margin-left: 50px;
-   
-}
-
-.listForm{
-    margin-top: 20px;
-   display: flex;
-   flex-direction: column;
-   justify-content: baseline;
-    margin-top: 20px;
-    margin-left: 50px;
-
-}
-
-.listForm{
-    margin-top: 20px;
-    margin-left: 198px;
-    margin-right: 198px;
-}
-
-.texthome{
+.texthome {
     width: 600px;
     color: white;
     font-family: 'Montserrat', sans-serif;
     font-weight: lighter;
     font-style: italic;
     font-size: 21px;
-    line-height: 30px; 
+    line-height: 30px;
     text-align: center;
     margin: 100px auto;
 }
 
+.formhome {
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+
+}
+
+.input {
+    width: 500px;
+   
+}
+
+.imputStyle{
+    margin-top: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .buttonForm{
-    color: black;
-    background-color: white;
     width: 300px;
-    margin-top: 35px;
-    margin-left: 50px;
-
 }
+.error {
+    font-size: 12px;
+    font-style: italic;
+    margin-top: -2px;
 
-.texlist{
-    margin-left: 50px;
-}
-
-thead {
-    background-color: white;
-    color: black;
-    border: white;
-    
-}
-
-.button-list{
-    display: flex;
-    flex-direction: row;
-    align-content: space-between;
-    
 }
 
 .tittle-list{
     margin-top: 100px;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.tittle-list h2 {
+    padding-right: 300px;
 }
 
-.logotable{
-    display: flex;
-    flex-direction: row;
+.tittle-list p {
+    font-size: 13px;
 }
 
-.button-admin{
-    background-color: transparent;
-    border: none;
-    width: 5px;
+
+.textlist{
+    font-family: 'Montserrat', sans-serif;
+
 }
+
+.title {
+    background-color: white;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    height: 40px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.dataUser{
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+
+
+@media screen and (max-width: 430px) {
+
+    
+    .formhome {
+        
+        display: flex;
+        flex-direction: column;
+       margin-left: 350px;
+        
+        
+    
+    }
+
+    .listForm, .tittle-list {
+        
+     margin-left: 300px;
+
+    }
+  
+  }
 
 

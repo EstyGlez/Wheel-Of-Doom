@@ -16,8 +16,36 @@ body {
   border-radius: 50%;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
 }
+
+.cont-roulette{
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 30px;
+ 
+  
+}
+
+.Inst{
+  position: fixed;
+  margin-top: 80px;
+
+}
+
+#but-rou{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.text-roulette{
+  font-family: 'Montserrat', sans-serif;
+}
+
+
 
 @keyframes spin {
   0% {
@@ -54,4 +82,36 @@ body {
 
 .sorteo-container.spinning .button-container {
   transform: rotate(360deg);
+}
+
+
+@media screen and (max-width: 430px) {
+
+  .cont-roulette {
+
+
+      display: flex;
+      flex-direction: column;
+
+  }
+
+  #but-rou{
+    display: flex;
+    flex-direction: column;
+    margin-top: 220px;
+    position: static; 
+    z-index: auto;
+    
+  }
+
+  .Inst{
+    margin-left: 400px;
+  }
+
+  .wheel img{
+    margin-top: 20px;
+  }
+
+
+
 }
